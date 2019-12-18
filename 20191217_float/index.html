@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float</title>
+	<style>
+		div.wrap {
+			width: 300px;
+			background-color: skyblue;
+			height: 220px;
+		}
+		
+		div.left, div.right {
+			display: inline-block;
+			width: 135px;
+			height: 200px;
+			float: left;
+		}
+		
+		div.left {
+			background-color: pink;
+		}
+		
+		div.right {
+			background-color: blue;
+			margin-left: -6px;
+		}
+		
+		div.clear {
+			clear: both;
+		}
+		
+		div.wrap:after{
+			display: block;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="left">view01</div>
+		<div class="right">view02</div>
+	</div>
+	<div class="visual">
+		Lorem ipsum dolor sit amet.
+	</div>
+</body>
+</html>
