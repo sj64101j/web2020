@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>layout</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		li{list-style: none} 
+		a:visited,a:link{
+			text-decoration:none;
+			color:#000
+		}
+		.clearfix:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		/* header start */
+		div#header {
+			width: 1000px;
+			/* background-color: red; */
+			margin: 0 auto;
+			padding-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		div#header>h1{
+			width: 100px;
+			/* background-color: skyblue; */
+			margin:0 auto;
+			text-align: center;
+		}
+
+		div#header>nav.gnb {
+			padding-top: 20px;
+			/* background-color: #00f; */
+		}
+
+		/* div#header>nav.gnb>ul.gnb:after{
+			content: "";
+			display: block;
+			clear: both;
+		} */
+
+		div#header>nav.gnb>ul.gnb>li{
+			float: left;
+			width: 166.66px;
+			background-color:skyblue;
+		}
+
+		div#header>nav.gnb>ul.gnb>li>a{
+			display: block;
+			text-align: center;
+			line-height:40px
+		}
+
+		div#header>nav.gnb>ul.gnb>li>a:hover{
+			background-color: #00f;
+			color:white
+		}
+		/* header end */
+
+		/* visual start */
+		div.visual {
+			height: 400px;
+			background-color: pink;
+			margin-bottom: 20px;
+		}
+		/* visual end */
+
+         /* container start */
+		div.container {
+			width: 1000px;
+			margin: 0 auto;
+			margin-top: 30px;
+			margin-bottom: 20px;
+		}
+
+		div.container>h3 {
+			text-align: center;
+			font-size: 30px;
+			color: #fff;
+			background-color: gray;
+		}
+
+		div.container>ul {
+			background-color: gray;
+		}
+
+		/* div.container>ul:after{
+			content: "";
+			display: block;
+			clear: both;
+		} */
+
+		div.container>ul>li {
+			margin: 0 auto;
+			width: 242.5px;
+			float: left;
+			margin-right: 10px;
+			margin-top: 10px;
+		}
+
+		div.container>ul>li:last-child{
+			margin-right: 0;
+		}
+
+		div.container>ul>li>img {
+			width: 100%;
+		}
+		/* container end */
+
+		/* footer start */
+		div#footer{
+			height: 100px;
+			background-color: #000;
+		}
+		/* footer end */
+
+	</style>
+</head>
+<body>
+ <!-- header  -->
+	<div id="header">
+		<h1>LOGO</h1>
+		<nav class="gnb">
+			<ul class="gnb clearfix">
+				<li><a href="#">menu1</a></li>
+				<li><a href="#">menu2</a></li>
+				<li><a href="#">menu3</a></li>
+				<li><a href="#">menu4</a></li>
+				<li><a href="#">menu5</a></li>
+				<li><a href="#">menu6</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="visual"></div>
+	<div class="container">
+		<h3>gallery01</h3>
+		<ul class="clearfix">
+			<li><img src="../images/testimg01.jpg" alt=""></li>
+			<li><img src="../images/testimg01.jpg" alt=""></li>
+			<li><img src="../images/testimg01.jpg" alt=""></li>
+			<li><img src="../images/testimg01.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div id="footer">
+		
+	</div>
+</body>
+</html>
