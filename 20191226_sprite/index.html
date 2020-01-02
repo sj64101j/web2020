@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<title>sprite images</title>
+	
+	<link rel="stylesheet" href="../css/reset.css">
+	
+	<style>
+		
+		div.header {
+			width: 1000px;
+			_background-color: skyblue;
+			margin: 0 auto;
+		}
+		
+		div.header>h1 {
+			width: 125px;
+			height: 25px;
+			margin: 0 auto;
+			_background-color: pink;
+			background-image: url(../images/naver.png);
+			background-position: 0 -2px;
+			background-repeat: no-repeat;
+		}
+		
+		div.header>h1>a {
+			display: block;
+			text-indent: -9999px;
+			line-height: 25px;
+		}
+		
+		div.header>nav.nav {
+			_background-color: #00b900;
+		}
+		
+		div.header>nav.nav>ul {
+			padding: 20px;
+		}
+		
+		div.header>nav.nav>ul>li {
+			float: left;
+			background-image: url(../images/naver.png);
+			_height: 40px;
+		}
+		
+		div.header>nav.nav>ul>li>a {
+			display: block;
+			text-indent: -9999px;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(1) {
+			width: 55px;
+			height: 20px;
+			/*background-image: url(../images/naver.png);*/
+			background-position: -125px -47px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(1):hover {
+			background-position: -123px -70px;
+		}				
+		
+		div.header>nav.nav>ul>li:nth-child(2) {
+		  width: 70px;
+			height: 20px;
+			/*background-image: url(../images/naver.png);*/
+			background-position: 0px -53px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(2):hover {
+			background-position: 0 -30px;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(3) {
+		  width: 55px;
+			height: 20px;
+			/*background-image: url(../images/naver.png);*/
+			background-position: -125px -1px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(3):hover {
+			background-position: -125px -24px;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(4) {
+		  width: 45px;
+			height: 20px;
+			/*background-image: url(../images/naver.png);*/
+			background-position: -180px -70px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(4):hover {
+			background-position: -180px -24px;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(5) {
+		  width: 57px;
+			height: 20px;
+			/*background-image: url(../images/naver.png);*/
+			background-position: -123px -93px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(5):hover {
+			background-position: 0px -122px;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(6) {
+		  width: 44px;
+			height: 20px;
+			/*background-image: url(../images/naver.png);*/
+			background-position: -46px -145px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(6):hover {
+			background-position: -90px -145px;
+		}
+		
+		div.header>nav.nav>ul>li:nth-child(7) {
+		  width: 60px;
+			height: 20px;
+			/*background-image: url(../images/naver.png);*/
+			background-position: -110px -122px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.menu1 {
+			width: 980px;
+			margin: 0 auto;
+		}
+		
+		div.menu1>ul {
+		}
+		
+		div.menu1>ul>li {
+			float: left;
+			width: 140px;
+			height: 840px;
+			background-image: url(../images/sprites.png);
+			overflow: hidden;
+		}
+		
+		div.menu1>ul>li>a {
+			display: block;
+			text-indent: -9999px;
+		}
+		
+		div.menu1>ul>li:nth-child(1) {
+			width: 140px;
+			height: 50px;
+			background-position: 0px 0px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.menu1>ul>li:nth-child(1).active {
+			background-position: 0 -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(1):hover {
+			background-position: 0 -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(2) {
+			width: 140px;
+			height: 50px;
+			background-position: -140px 0px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.menu1>ul>li:nth-child(2).active {
+			background-position: -140px -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(2):hover {
+			background-position: -140px -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(3) {
+			width: 140px;
+			height: 50px;
+			background-position: -280px 0px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.menu1>ul>li:nth-child(3).active {
+			background-position: -280px -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(3):hover {
+			background-position: -280px -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(4) {
+			width: 140px;
+			height: 50px;
+			background-position: -420px 0px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.menu1>ul>li:nth-child(4).active {
+			background-position: -420px -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(4):hover {
+			background-position: -420px -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(5) {
+			width: 140px;
+			height: 50px;
+			background-position: -560px 0px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.menu1>ul>li:nth-child(5).active {
+			background-position: -560px -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(5):hover {
+			background-position: -560px -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(6) {
+			width: 140px;
+			height: 50px;
+			background-position: -700px 0px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.menu1>ul>li:nth-child(6).active {
+			background-position: -700px -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(6):hover {
+			background-position: -700px -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(7) {
+			width: 140px;
+			height: 50px;
+			background-position: -840px 0px;
+			background-repeat: no-repeat;
+			transition: 0.3s;
+		}
+		
+		div.menu1>ul>li:nth-child(7).active {
+			background-position: -840px -50px;
+		}
+		
+		div.menu1>ul>li:nth-child(7):hover {
+			background-position: -840px -50px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="header">
+		<h1><a href="#">NAVER</a></h1>
+		<nav class="nav">
+			<ul class="clearfix">
+				<li><a href="#">통합검색</a></li>
+				<li><a href="#">실시간검색</a></li>
+				<li><a href="#">지식백과</a></li>
+				<li><a href="#">이미지</a></li>
+				<li><a href="#">어학사전</a></li>
+				<li><a href="#">블로그</a></li>
+				<li><a href="#">더보기</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="menu1">
+		<ul class="1">
+			<li class="active"><a href="#">지역</a></li>
+			<li><a href="#">쇼핑</a></li>
+			<li><a href="#">문화</a></li>
+			<li><a href="#">여행</a></li>
+			<li><a href="#">레저</a></li>
+			<li><a href="#">추천</a></li>
+			<li><a href="#">전체보기</a></li>
+		</ul>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

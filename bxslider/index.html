@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>bxslider</title>
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		/*ul.slider li img {
+			width: 100%;
+		}*/
+		
+		.sliderWrap {
+			width: 900px;
+			margin: 0 auto;
+			position: relative;
+		}
+		
+		.bx-wrapper {
+			-moz-box-shadow: 0 none;
+			-webkit-box-shadow: 0 none;
+			box-shadow: 0 none;
+			border: 0 none;
+			margin-bottom: 0;
+		}
+		
+		.bx-wrapper .bx-pager {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+		}
+		
+		.nextBtn,.prevBtn {
+			position: absolute;
+			top: 50%;
+			margin-top: -50px;
+			cursor: pointer;
+		}
+		
+		.nextBtn {
+			right: 0;
+		}
+		
+		div.slider_pager {
+			position: absolute;
+			width: 100%;
+			bottom: 20px;
+		}
+		
+		div.slider_pager a {
+			display: block;
+			width: 25%;
+			background-color: skyblue;
+			float: left;
+			text-align: center;
+			line-height: 30px;
+			color: #fff;
+			cursor: pointer;
+		}
+		
+		div.slider_pager a.active {
+			background-color: pink;
+			color: #fff
+		}
+		
+	</style>
+	
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+	<script>
+		
+		
+	/*jpuery*/$(document).ready(function(){
+		var mySlide = $(".slider").bxSlider({
+			auto:true,
+			controls:false,
+			pagerCustom:".bx-pager"
+		});
+		
+		$(".nextBtn").click(function(){
+			mySlide.goToNextSlide();
+		});
+		
+		$(".prevBtn").click(function(){
+			mySlide.goToPrevSlide();
+		});
+		
+		$(".sliderOne").bxSlider();
+	});
+	</script>
+</head>
+<body>
+
+	<!--ul.slider>li*3>img[src="images/px0$.jpg" alt="img0$"]-->
+	<div class="sliderWrap">
+	<ul class="slider">
+		<li><img src="images/pc01.jpg" alt="img01"></li>
+		<li><img src="images/pc02.jpg" alt="img02"></li>
+		<li><img src="images/pc03.jpg" alt="img03"></li>
+		<li><img src="images/pc02.jpg" alt="img04"></li>
+	</ul>
+	<div class="nextBtn">
+		<img src="images/btn_right.png" alt="다음">
+	</div>
+	<div class="prevBtn">
+		<img src="images/btn_left.png" alt="이전">
+	</div>
+	<div class="slider_pager">
+		<div class="bx-pager clearfix">
+			<a href="#" data-slide-index="0">menu1</a>
+			<a href="#" data-slide-index="1">menu2</a>
+			<a href="#" data-slide-index="2">menu3</a>
+			<a href="#" data-slide-index="3">menu4</a>
+		</div>
+	</div>
+	</div>
+	<div style="height: 200px; background-color: #f00;" onclick="dLink();"></div>
+	
+	<ul class="sliderOne">
+		<li><img src="images/pc01.jpg" alt="img01"></li>
+		<li><img src="images/pc02.jpg" alt="img02"></li>
+		<li><img src="images/pc03.jpg" alt="img03"></li>
+		<li><img src="images/pc03.jpg" alt="img03"></li>
+	</ul>
+</body>
+</html>
