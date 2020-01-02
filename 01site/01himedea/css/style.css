@@ -318,6 +318,8 @@ div.bottom1 li a:hover {
 	color: #ffffff;
 }
 
+_div.bottom1 ul li:first-child a{padding: 0;}
+
 div.bottom1 li:after {
 	content: "";
 	display: block;
@@ -333,6 +335,7 @@ div.bottom1 li:first-child:after {
 	display: none;
 	padding: none;
 }
+
 
 div.bottom1 img {
 	float: right;
