@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>		.contentWrap {
+			padding-top: 30px;
+			margin-top: 30px;
+		}
+		.contentWrap>.headerTitle{
+			width: 1200px;
+			margin: 0 auto;
+			margin-bottom: 20px;
+		}
+		.contentWrap>.headerTitle>h2 {
+			text-align: center;
+		}
+		.contentWrap>.headerTitle>h2:after {
+			content: "";
+			display: block;
+			width: 150px;
+			height: 2px;
+			background-color: #333;
+			margin: 15px auto;
+		}
+		.contentWrap>.headerTitle>p {
+			text-align: center;
+		}
+		.contentWrap>ul.content {
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.contentWrap>ul.content>li {
+			float: left;
+			width: 288.75px; /*1200-45=1155->li 288.75px*/
+			height: 288.75px;
+			margin-right: 15px;
+		}
+		.contentWrap>ul.content>li:last-child {
+			margin-right: 0;
+		}
+		.contentWrap img {
+			width: 100%;
+		}
+		
+		ul.content>li {
+			position: relative;
+			overflow: hidden;
+		}
+		ul.content>li>.overlay {
+			width: 100%;
+			height: 100%;
+			padding-top: 120px;
+			background-color: rgba(0,0,100,0.5);
+			position: absolute;
+			top: 0;
+			left: 100%;
+			transition: 0.7s;
+		}
+		ul.content>li>.overlay>.text {
+			width: 120px;
+			height: 50px;
+			text-align: center;
+			border: 1px solid #ccc;
+			margin: 0 auto;
+			line-height: 50px;
+			color: #ccc;
+			font-weight: bold;
+		}
+		ul.content>li:hover .overlay {
+			left:0;
+		}
+	</style>
+</head>
+<body>
+<div class="contentWrap">
+		<div class="headerTitle">
+			<h2>Gallery</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, commodi!</p>
+		</div>
+		<ul class="content clearfix">
+			<li>
+			<img src="../images/testimg.jpg" alt="">
+			<div class="overlay">
+				<div class="text"><i>France Paris</i></div>
+			</div>
+			</li>
+			<li>
+			<img src="../images/testimg.jpg" alt="">
+			<div class="overlay">
+				<div class="text"><i>France Paris</i></div>
+			</div>
+			</li>
+			<li>
+			<img src="../images/testimg.jpg" alt="">
+			<div class="overlay">
+				<div class="text"><i>France Paris</i></div>
+			</div>
+			</li>
+			<li>
+			<img src="../images/testimg.jpg" alt="">
+			<div class="overlay">
+				<div class="text"><i>France Paris</i></div>
+			</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
