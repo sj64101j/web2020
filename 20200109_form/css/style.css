@@ -10,6 +10,7 @@
 fieldset {
 	border: 1px solid #dadada;
 	background-color: #fff;
+	margin-bottom: 10px;
 }
 
 
@@ -98,6 +99,54 @@ body {
 	background: #1dbe00 url(../images/btn_join2.gif) no-repeat 50% 0;
 	text-indent: -9999px;
 }
+
+#content fieldset .field .btn-label {
+	display: block;
+	width: 212px;
+	height: 31px;
+	border: 1px solid #dcdcdc;
+	position: absolute;
+	top: 8px;
+	text-align: center;
+	line-height: 31px;
+	background-color: #fff;
+	cursor: pointer;
+}
+#content fieldset .field .btn-label.male {
+	left: 15px;
+}
+
+#content fieldset .field .btn-label.female {
+	left: 228px;
+}
+
+#content fieldset .field.btn-radio {
+	height: 49px;
+}
+
+#content fieldset .field.btn-radio input {
+	position:relative;
+	left: 50px;
+	top: 14px;
+}
+
+#content fieldset .field.btn-radio input:active {
+	background-color: #ccc;
+}
+
+.w458{width: 458px !important;}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
