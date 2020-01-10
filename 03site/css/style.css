@@ -22,30 +22,31 @@ header#headerWrap>div.main_headerWrap {
 	position: relative;
 }
 
-.main_header ul.logo {
-	position: absolute;
-	top: 0;
-	left: 0;
+.main_header .logo {
+	_position: absolute;
+	_top: 0;
+	_left: 0;
+	float: left;
 	width: 145px;
 	height: 50px;
 }
 
-ul.logo a{
+.logo a{
 	float: left;
 	padding-top: 20px;
 }
 
-ul.logo img {
+.logo img {
 	float: left;
 }
 
-ul.logo h2 {
+.logo h2 {
 	float: left;
 	margin-left: 4px;
 	color: white;
 }
 
-ul.logo p {
+.logo p {
 	_float: left;
 	font-size: 11px;
 	text-align: center;
@@ -53,18 +54,75 @@ ul.logo p {
 	color: white;
 }
 
-_.search {
+.blind, legend {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: -9999px;
+}
+
+.search {
 	float: left;
 	width: 290px;
 	height: 30px;
+	padding-left: 135px;
+	padding-top: 30px;
+	_background-color: #fff;
+	_border-radius: 30px;
+}
+
+.search form fieldset {
+	width: 290px;
+	height: 30px;
+	border: 1px solid #dadada;
 	background-color: #fff;
+	margin-bottom: 10px;
 	border-radius: 30px;
 }
 
-.sns {
+.search form fieldset .field {
+	_border-bottom: 1px solid #f0f0f0;
+	position: relative;
+}
+
+.search form fieldset .field:last-child {
+	border-bottom: 0 none;
+	position: relative;
+}
+
+.search form fieldset .field lebel {
+	font-size: 8px;
+	font-weight: bold;
+	padding-left: 16px;
+	line-height: 30px;
+}
+
+.search form fieldset .field .inp-field {
+	width: 120px;
+	font-size: 13px;
+	border: 0 none;
+	margin-left: 5px;
+}
+
+.search form fieldset .field img {
 	position: absolute;
-	top: 35%;
-	right: 0;
+	top: 7px;
+	right: 20px;
+}
+
+.search form fieldset .field .inp-field .icon img {
+	display: none;
+	float: right;
+	width: 14px;
+	height: 14px;
+}
+
+.sns {
+	padding-top: 32px;
+	float: right;
+	_position: absolute;
+	_top: 35%;
+	_right: 0;
 }
 
 .sns h3 {
@@ -72,6 +130,7 @@ _.search {
 	font-size: 22px;
 	font-weight: bolder;
 	margin-right: 9px;
+	line-height: 22px;
 	color: white;
 }
 
@@ -79,6 +138,7 @@ _.search {
 	float: left;
 	font-size: 22px;
 	margin-right: 17px;
+	line-height: 22px;
 	color: white;
 }
 
@@ -200,7 +260,6 @@ nav.gnb a {
 }
 
 
-
 .content02 {
 	width: 482px;
 	height: 300px;
@@ -209,7 +268,6 @@ nav.gnb a {
 	background-color: #fff;
 	margin-bottom: 16px;
 }
-
 
 
 /*content03 start*/
