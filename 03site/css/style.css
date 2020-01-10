@@ -267,8 +267,86 @@ nav.gnb a {
 	_top: 56px;
 	background-color: #fff;
 	margin-bottom: 16px;
+	position: relative;
 }
 
+.content02 .slider {
+	width: 132px;
+	height: 300px;
+	background-color: darkblue;
+}
+
+.content02 .choice {
+	width: 350px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.f_layer {
+	width: 350px;
+	margin: 0 auto;
+}
+
+fieldset {
+	border: 0 none;
+}
+
+legend {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: -9999px;
+}
+
+.f_layer fieldset label {
+	display: block;
+	padding: 5px 0;
+	color: #424242;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.f_layer fieldset select {
+	display: block;
+	width: 275px;
+	height: 32px;
+	line-height: 32px;
+	font-size: 13px;
+	text-indent: 8px;
+	border-radius: 5px;
+	color: #c8c8c8;
+	border: 2px solid #ededed;
+}
+
+.f_layer fieldset .sleft,
+.f_layer fieldset .sright {
+	float: left;
+	width: 130px;
+}
+
+.f_layer fieldset .sleft input,
+.f_layer fieldset .sright input {
+	width: 130px;
+	height: 30px;
+	border-radius: 5px;
+	border: 2px solid #ededed;
+	line-height: 28px;
+	text-indent: 8px;
+	font-size: 13px;
+	color: #c8c8c8;
+	_font-weight: bold
+}
+
+.f_layer fieldset .sleft {
+	margin-right: 13px;
+}
+
+.f_layer fieldset eleft,
+.f_layer fieldset eright {
+	width: 66px;
+}
 
 /*content03 start*/
 .content03 {
@@ -290,7 +368,7 @@ nav.gnb a {
 
 .content03 li .txtWrap {
 	position: absolute;
-	bottom: 0;
+	top: 47%;
 	height: 50px;
 	width: 233px;
 	background-color: #152630;
