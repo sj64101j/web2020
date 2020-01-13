@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>menu</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		nav.gnb {
+			width: 1000px;
+			margin: 0 auto;
+			background-color: cornflowerblue;
+		}
+		
+		nav.gnb>ul {
+			
+		}
+		
+		nav.gnb>ul>li {
+			width: 20%;
+			height: 40px;
+			float: left;
+		}
+		
+		nav.gnb>ul>li>a {
+			display: block;
+			text-align: center;
+			line-height: 40px;
+		}
+		
+		nav.gnb>ul>li:hover {
+			background-color: coral;
+		}
+		
+		nav.gnb>ul>li>a:hover {
+			color: #fff;
+		}
+		
+		.submenu {
+			display: none;
+			background-color: coral;
+			padding-bottom: 10px;
+			_background-image: url(../images/bg_grid.gif);
+		}
+		
+		.submenu>li {
+			color: #fff;
+			text-align: center;
+			line-height: 35px;
+		}
+		
+		.submenu>li:hover {
+			background-color: orange;
+		}
+		
+		nav.gnb>ul:hover .submenu {
+			display: block;
+		}
+		
+		/*nav.gnb>ul>li:first-child .submenu {
+			display: block;
+		}*/
+		
+		.visual {
+			height: 400px;
+			background-color: cadetblue;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<nav class="gnb">
+		<ul class="clearfix">
+			<li>
+				<a href="#">menu1</a>
+				<ul class="submenu">
+					<li>smenu0101</li>
+					<li>smenu0102</li>
+					<li>smenu0103</li>
+					<li>smenu0104</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu2</a>
+				<ul class="submenu">
+					<li>smenu0201</li>
+					<li>smenu0202</li>
+					<li>smenu0203</li>
+					<li>smenu0204</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu3</a>
+				<ul class="submenu">
+					<li>smenu0301</li>
+					<li>smenu0302</li>
+					<li>smenu0303</li>
+					<li>smenu0304</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu4</a>
+				<ul class="submenu">
+					<li>smenu0401</li>
+					<li>smenu0402</li>
+					<li>smenu0403</li>
+					<li>smenu0404</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu5</a>
+				<ul class="submenu">
+					<li>smenu0501</li>
+					<li>smenu0502</li>
+					<li>smenu0503</li>
+					<li>smenu0504</li>
+			</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class="visual"></div>
+</body>
+</html>
