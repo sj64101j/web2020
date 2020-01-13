@@ -175,6 +175,7 @@ nav.gnb li:last-child {
 nav.gnb a {
 	width: 163.33px;
 	height: 59px;
+	display: block;
 }
 
 .mainWrap {
@@ -189,7 +190,8 @@ nav.gnb a {
 }
 
 .mainWrap>img:first-child {
-	top: 70px; left: 205px;
+	top: 70px; right: 50%;
+	margin-right: 300px;
 	position: absolute;
 	animation-name: myani2;
 	animation-iteration-count: infinite;
@@ -206,7 +208,9 @@ nav.gnb a {
 .mainWrap>img:nth-child(2) {
 	position: absolute;
 	top: 155px;
-	right: -50px;
+	_right: -50px;
+	left: 50%;
+	margin-left: -200px;
 	animation-name: myani1; /*이름*/
 	animation-iteration-count: infinite; /*반복횟수*/
 	animation-direction: alternate; /*움직이는 방향*/
@@ -223,8 +227,10 @@ nav.gnb a {
 	_width: 352px;
 	height: 556px;
 	position: absolute;
-	right: 28%;
+	_right: 28%;
+	left: 50%;
 	top: 4%;
+	margin-left: 30px;
 }
 
 .mainWrap .content01 h1 {
@@ -269,20 +275,97 @@ nav.gnb a {
 	margin-bottom: 16px;
 	position: relative;
 }
-
-.content02 .slider {
+.content02 .bx-wrapper {
+	margin-bottom: 0;
+}
+.content02 .slider_pager {
 	width: 132px;
 	height: 300px;
-	background-color: darkblue;
+	float: left;
+	_background-color: darkblue;
 }
 
-.content02 .choice {
+.slider_pager .bx-pager a {
+	float: left;
+	width: 132px;
+	height: 75px;
+	padding-top: 26px;
+	padding-left: 20px;
+	background-color: #0099cb;
+	border-bottom: 1px solid #00a7d4;
+	color: #fff;
+}
+
+.slider_pager .bx-pager a:last-child {
+	border-bottom: 0 none;
+}
+
+.slider_pager .bx-pager a.active {
+	background-color: #fff;
+	color: #414141
+}
+
+.slider_pager .bx-pager>a>img {
+	float: left;
+	padding-right: 11px;
+}
+
+.slider_pager .bx-pager>a>img.out {
+	display: none;
+}
+
+.slider_pager .bx-pager>a>img.active {
+	display: block;
+}
+
+.slider_pager .bx-pager>a.active img.out {
+	display: block;
+}
+
+.slider_pager .bx-pager>a.active img.active {
+	display: none;
+}
+
+.slider_pager .bx-pager>a>p {
+	float: left;
+	font-size: 15px;
+}
+
+.slider_pager .bx-pager>a>p:active {
+	_color: #fff;
+}
+
+.content02 .slider {
 	width: 350px;
 	height: 300px;
 	position: absolute;
 	top: 0;
 	right: 0;
 }
+
+.bx-wrapper {
+	float: right;
+	_width: 350px;
+	height: 300px;
+    -moz-box-shadow: 0 none;
+    -webkit-box-shadow: 0 none;
+    box-shadow: 0 none;
+    border: 0 none;
+    background: #fff;
+}
+/*.slider {
+	float: right;
+	width: 350px;
+	height: 300px;
+}*/
+
+/*.content02 .choice {
+	width: 350px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}*/
 
 .f_layer {
 	width: 350px;
@@ -298,6 +381,11 @@ legend {
 	position: absolute;
 	left: 0;
 	top: -9999px;
+}
+
+.f_layer fieldset ul {
+	padding-top: 28px;
+	padding-left: 36px;
 }
 
 .f_layer fieldset label {
@@ -343,15 +431,64 @@ legend {
 	margin-right: 13px;
 }
 
-.f_layer fieldset eleft,
-.f_layer fieldset eright {
+.f_layer fieldset .eleft {
+	float: left;
+	width: 116px;
+	margin-right: 21px;
+}
+
+.f_layer fieldset .eleft select {
+	width: 116px;
+	height: 30px;
+	border-radius: 5px;
+	border: 2px solid #ededed;
+	line-height: 28px;
+	text-indent: 8px;
+	font-size: 13px;
+	color: #c8c8c8;
+}
+
+.f_layer fieldset .eright1,
+.f_layer fieldset .eright2 {
+	float: left;
 	width: 66px;
+}
+
+.f_layer fieldset .eright1 input,
+.f_layer fieldset .eright2 input {
+	width: 66px;
+	height: 30px;
+	border-radius: 5px;
+	border: 2px solid #ededed;
+	line-height: 28px;
+	text-indent: 8px;
+	font-size: 13px;
+	color: #c8c8c8;
+	font-weight: bold;
+}
+
+.f_layer fieldset .eright1 {
+	margin-right: 6px;
+}
+
+.f_layer fieldset .btn-submit {
+	width: 278px;
+	height: 38px;
+	margin-top: 24px;
+	cursor: pointer;
+	border:0 none;
+	border-radius: 5px;
+	background-color: #ea4f1f;
+	background-image: url(../images/submit.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	text-indent: -9999px;
 }
 
 /*content03 start*/
 .content03 {
 	width: 482px;
-	height: 240px;
+	_height: 240px;
 	_top: 371px;
 	_background-color: pink;
 	_position: absolute;
@@ -368,7 +505,7 @@ legend {
 
 .content03 li .txtWrap {
 	position: absolute;
-	top: 47%;
+	bottom: 0;
 	height: 50px;
 	width: 233px;
 	background-color: #152630;
