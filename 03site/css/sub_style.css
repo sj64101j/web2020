@@ -1,0 +1,252 @@
+@charset "uft-8";
+
+body {
+	background-image: url(../images/bg_pt.png);
+}
+
+/*header start*/
+header#headerWrap {
+	width: 100%;
+	height: 149px;
+	border-bottom: 3px solid #0e73a7;
+	box-sizing: content-box;
+}
+header#headerWrap>div.main_headerWrap {
+	width: 100%;
+	height: 90px;
+	background-image: url(../images/hd01.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.main_header {
+	width: 980px;
+	height: 90px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.main_header .logo {
+	_position: absolute;
+	_top: 0;
+	_left: 0;
+	float: left;
+	width: 145px;
+	height: 50px;
+}
+
+.logo a{
+	float: left;
+	padding-top: 20px;
+}
+
+.logo img {
+	float: left;
+}
+
+.logo h2 {
+	float: left;
+	margin-left: 4px;
+	color: white;
+}
+
+.logo p {
+	_float: left;
+	font-size: 11px;
+	text-align: center;
+	margin-left: 4px;
+	color: white;
+}
+
+.blind, legend {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: -9999px;
+}
+
+.search {
+	float: left;
+	width: 290px;
+	height: 30px;
+	padding-left: 135px;
+	padding-top: 30px;
+	_background-color: #fff;
+	_border-radius: 30px;
+}
+
+.search form fieldset {
+	width: 290px;
+	height: 30px;
+	border: 1px solid #dadada;
+	background-color: #fff;
+	margin-bottom: 10px;
+	border-radius: 30px;
+}
+
+.search form fieldset .field {
+	_border-bottom: 1px solid #f0f0f0;
+	position: relative;
+}
+
+.search form fieldset .field:last-child {
+	border-bottom: 0 none;
+	position: relative;
+}
+
+.search form fieldset .field lebel {
+	font-size: 8px;
+	font-weight: bold;
+	padding-left: 16px;
+	line-height: 30px;
+}
+
+.search form fieldset .field .inp-field {
+	width: 120px;
+	font-size: 13px;
+	border: 0 none;
+	margin-left: 5px;
+}
+
+.search form fieldset .field img {
+	position: absolute;
+	top: 7px;
+	right: 20px;
+}
+
+.search form fieldset .field .inp-field .icon img {
+	display: none;
+	float: right;
+	width: 14px;
+	height: 14px;
+}
+
+.sns {
+	padding-top: 32px;
+	float: right;
+	_position: absolute;
+	_top: 35%;
+	_right: 0;
+}
+
+.sns h3 {
+	float: left;
+	font-size: 22px;
+	font-weight: bolder;
+	margin-right: 9px;
+	line-height: 22px;
+	color: white;
+}
+
+.sns h2 {
+	float: left;
+	font-size: 22px;
+	margin-right: 17px;
+	line-height: 22px;
+	color: white;
+}
+
+.sns a {
+	float: left;
+	margin-right: 6px;
+}
+
+.sns a:last-child {
+	margin-right: 0;
+}
+
+nav.gnb {
+	width: 100%px;
+	height: 59px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+nav.gnb>ul {
+	width: 980px;
+	height: 59px;
+	margin: 0 auto;
+}
+
+nav.gnb>ul>li {
+	float: left;
+	width: 163.33px;
+	text-align: center;
+	line-height: 59px;
+	border-left: 1px solid #e9e9e9;
+	font-size: 17px;
+	font-weight: bold;
+	color: #152532;
+}
+
+nav.gnb>ul>li:last-child {
+	border-right: 1px solid #e9e9e9;
+}
+
+nav.gnb>ul>li>a {
+	width: 163.33px;
+	height: 59px;
+	display: block;
+}
+
+nav.gnb>ul>li>a:active {
+	color: #065da2
+}
+
+nav.gnb submenu>li {
+	float: left;
+	width: 50px;
+}
+
+nav.gnb submenu>li>a {
+	display: block;
+	font-size: 13px
+}
+/*header end*/
+
+/*submenu start*/
+
+div.submenu {
+	width: 100%;
+	height: 35px;
+	background-color: rgba(0,0,0,0.3);
+	position: relative;
+}
+
+div.submenu>ul.smenu {
+	position: absolute;
+	left: 50%;
+	margin-left: 75px;
+}
+
+div.submenu>ul.smenu>li {
+	float: left;
+	margin-right: 23px;
+}
+
+div.submenu>ul.smenu>li>a {
+	display: block;
+	text-align: center;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 35px;
+	color: #e0dfe0;
+}
+
+_div.submenu>ul.smenu>li>a:hover {
+	color: #fefefe;
+}
+
+div.submenu>ul.smenu>li>a:active {
+	color: #fefefe;
+}
+
+div.img {
+	width: 100%;
+	height: 290px;
+	background-image: url(../images/subimg01.png);
+	background-repeat: no-repeat;
+	_background-attachment: fixed;
+}
+
+/*submenu end*/

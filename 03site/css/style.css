@@ -1,5 +1,9 @@
 @charset "uft-8";
 
+body.company {
+	background-image: url(../images/bg_pt.png);
+}
+
 /*header start*/
 header#headerWrap {
 	width: 100%;
@@ -152,12 +156,19 @@ header#headerWrap>div.main_headerWrap {
 }
 
 nav.gnb {
+	width: 100%;
+	height: 59px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+nav.gnb>ul {
 	width: 980px;
 	height: 59px;
 	margin: 0 auto;
 }
 
-nav.gnb li {
+nav.gnb>ul>li {
 	float: left;
 	width: 163.33px;
 	text-align: center;
@@ -168,14 +179,18 @@ nav.gnb li {
 	color: #152532;
 }
 
-nav.gnb li:last-child {
+nav.gnb>ul>li:last-child {
 	border-right: 1px solid #e9e9e9;
 }
 
-nav.gnb a {
+nav.gnb>ul>li>a {
 	width: 163.33px;
 	height: 59px;
 	display: block;
+}
+
+nav.gnb>ul>li>a:active {
+	color: #065da2
 }
 
 .mainWrap {
@@ -862,8 +877,98 @@ footer .footerWrap .footerBottom p:last-child {
 	float: none;
 }
 
+/*submenu start*/
 
+div.submenu {
+	width: 100%;
+	height: 35px;
+	background-color: rgba(0,0,0,0.3);
+	position: relative;
+}
 
+div.submenu>ul.smenu {
+	position: absolute;
+	left: 50%;
+	margin-left: 75px;
+}
+
+div.submenu>ul.smenu>li {
+	float: left;
+	margin-right: 23px;
+}
+
+div.submenu>ul.smenu>li>a {
+	display: block;
+	text-align: center;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 35px;
+	color: #e0dfe0;
+}
+
+_div.submenu>ul.smenu>li>a:hover {
+	color: #fefefe;
+}
+
+div.submenu>ul.smenu>li>a:active {
+	color: #fefefe;
+}
+/*submenu end*/
+
+/*div.img start*/
+div.contentWrap {
+	width: 100%;
+	height: 1080px;
+	position: relative;
+}
+div.img {
+	width: 100%;
+	height: 290px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	_background-attachment: fixed;
+}
+
+div.img.company {
+	background-image: url(../images/subimg01.png);
+}
+
+.img .txtWrap {
+	width: 350px;
+	height: 110px;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+
+.img .txtWrap>h2 {
+	text-align: center;
+	font-size: 49px;
+	color: #fff;
+}
+
+.img .txtWrap p {
+	text-align: center;
+	font-size: 17px;
+	color: #fff;
+}
+
+.img .txtWrap p>span {
+	font-weight: bold;
+	font-size: 17px;
+	color: #fff;
+}
+/*div.img end*/
+
+/*div.contant start*/
+.content {
+	width: 980px;
+	margin: 0 auto;
+}
+
+.content>img {
+	position: absolute;
+	bottom: 0;
+}
 
 
 

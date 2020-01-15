@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>menu</title>
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="../css/reset.css">
+	
+		<style>
+		
+		
+		
+		/*nav.gnb*/
+		nav.gnb {
+			width: 1000px;
+			margin: 0 auto;
+			background-color: skyblue;
+			margin-bottom: 20px;
+			position: relative;
+			z-index: 1;
+		}
+		.submenu {display: none;}
+		nav.gnb>ul>li {
+			float: left;
+			width: 20%;
+			height: 40px;
+		}
+		nav.gnb>ul>li>a {
+			display: block;
+			text-align: center;
+			line-height: 40px;
+		}
+		nav.gnb>ul>li:hover {
+			background-color: cornflowerblue;
+			transition: 0.3s;
+			border-bottom: 3px solid darkblue;
+		}
+		
+		/*세로메뉴*/
+		/*nav.gnb>ul>li:hover .submenu { 
+			display: block;
+		}*/
+		
+		/*전체메뉴*/
+		nav.gnb>ul:hover li .submenu { 
+			display: block;
+			background-color: salmon;
+			transition: 0.5s;
+
+		}
+		nav.gnb>ul>li:hover .submenu {
+			background-color: skyblue;
+			transition: 0.3s;
+		}
+			.submenu {
+				background-color: #ddd;
+			}
+		
+		/*submenu*/
+		/*nav.gnb>ul>li:first-child .submenu {
+			display: block;
+		}*/
+		.submenu>li>a {
+			display: block;
+			text-align: center;
+			line-height: 35px;
+		}
+		.submenu>li:hover {
+			background-color: #eee;
+			transition:0.3s;
+		}
+		
+		/*slider visual*/
+		.visual {
+			background-color: pink;
+			margin: 0 auto;
+		}
+		.visual img {
+			width: 100%;
+		}
+		.bx-wrapper {
+			-moz-box-shadow: 0 none;
+			-webkit-box-shadow: 0 none;
+			box-shadow: 0 none;
+			border: 0 none;
+		}
+		.bx-wrapper {
+			position: relative;
+			/* margin-bottom: 60px; */
+			padding: 0;
+			-ms-touch-action: pan-y;
+			touch-action: pan-y;
+		}
+		.bx-wrapper .bx-pager.bx-default-pager a {
+			background: #eee;
+			text-indent: -9999px;
+			display: block;
+			width: 10px;
+			height: 10px;
+			
+			outline: 0;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			border-radius: 5px;
+		}
+		
+		
+		
+	</style>
+		
+	<script src="js/jquery-3.1.1.min.js"></script>
+		
+	<script src="js/jquery.bxslider.js"></script>
+		
+	<script>
+	$(document).ready(function(){
+		$(".slider").bxSlider({
+			
+		});
+	});
+	</script>
+	
+	
+	
+	
+</head>
+<body>
+	<nav class="gnb">
+		<ul class="clearfix">
+			<li>
+				<a href="#">menu1</a>
+				<ul class="submenu">
+					<li><a href="#">smenu0101</a></li>
+					<li><a href="#">smenu0102</a></li>
+					<li><a href="#">smenu0103</a></li>
+					<li><a href="#">smenu0104</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu2</a>
+				<ul class="submenu">
+					<li><a href="#">smenu0201</a></li>
+					<li><a href="#">smenu0202</a></li>
+					<li><a href="#">smenu0203</a></li>
+					<li><a href="#">smenu0204</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu3</a>
+				<ul class="submenu">
+					<li><a href="#">smenu0301</a></li>
+					<li><a href="#">smenu0302</a></li>
+					<li><a href="#">smenu0303</a></li>
+					<li><a href="#">smenu0304</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu4</a>
+				<ul class="submenu">
+					<li><a href="#">smenu0401</a></li>
+					<li><a href="#">smenu0402</a></li>
+					<li><a href="#">smenu0403</a></li>
+					<li><a href="#">smenu0404</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu5</a>
+				<ul class="submenu">
+					<li><a href="#">smenu0501</a></li>
+					<li><a href="#">smenu0502</a></li>
+					<li><a href="#">smenu0503</a></li>
+					<li><a href="#">smenu0504</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class="visual">
+		<ul class="slider">
+			<li><img src="../images/pc01.jpg" alt=""></li>
+			<li><img src="../images/pc02.jpg" alt=""></li>
+			<li><img src="../images/pc03.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>
