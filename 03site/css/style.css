@@ -192,7 +192,9 @@ nav.gnb>ul>li>a {
 nav.gnb>ul>li>a:active {
 	color: #065da2
 }
+/*header end*/
 
+/*mainWrap start*/
 .mainWrap {
 	width: 100%;
 	height: 1123px;
@@ -203,7 +205,7 @@ nav.gnb>ul>li>a:active {
 	position: relative;
 	padding-top: 56px;
 }
-
+/*img animation*/
 .mainWrap>img:first-child {
 	top: 70px; right: 50%;
 	margin-right: 300px;
@@ -222,20 +224,33 @@ nav.gnb>ul>li>a:active {
 
 .mainWrap>img:nth-child(2) {
 	position: absolute;
-	top: 155px;
+	top: 55px;
 	_right: -50px;
 	left: 50%;
-	margin-left: -200px;
+	_margin-left: -50px;
 	animation-name: myani1; /*이름*/
 	animation-iteration-count: infinite; /*반복횟수*/
 	animation-direction: alternate; /*움직이는 방향*/
 	animation-timing-function: linear; /*실행속도*/
-	animation-duration: 1.5s; /*작동시간*/
+	animation-duration: 2s; /*작동시간*/
 }
 
 @keyframes myani1 {
-	from {top: 155px; right: 350px;}
-	to {top: 200px; right: 350px;}
+	from {top: 55px; right: 350px;}
+	to {top: 150px; right: 350px;}
+}
+
+.mainWrap>img:nth-child(3) {
+	bottom: 0; right: 0;
+	position: absolute;
+	animation-name: myani3;
+	animation-timing-function: ease-out;
+	animation-duration: 3s;
+}
+
+@keyframes myani3 {
+	from {bottom: 0; right: 0;}
+	to {top: 0; left: 0;}
 }
 
 .mainWrap .content01 {
@@ -840,7 +855,7 @@ legend {
 
 footer {
 	height: 113px;
-	background-color: #fff;
+	_background-color: #fff;
 }
 
 footer .footerWrap {
