@@ -218,8 +218,8 @@ nav.gnb>ul>li>a:active {
 }
 
 @keyframes myani2 {
-	from {top: 70px; left: 205px;}
-	to {top: 120px; left: 205px;}
+	from {top: 70px; left: 155px;}
+	to {top: 120px; left: 155px;}
 }
 
 .mainWrap>img:nth-child(2) {
@@ -236,21 +236,22 @@ nav.gnb>ul>li>a:active {
 }
 
 @keyframes myani1 {
-	from {top: 55px; right: 350px;}
-	to {top: 150px; right: 350px;}
+	from {top: 205px; right: 350px;}
+	to {top: 250px; right: 350px;}
 }
 
 .mainWrap>img:nth-child(3) {
-	bottom: 0; right: 0;
+	left: 2100px; bottom: -9px;
 	position: absolute;
 	animation-name: myani3;
 	animation-timing-function: ease-out;
-	animation-duration: 3s;
+	animation-iteration-count: 1;
+	animation-duration: 4s;
 }
 
 @keyframes myani3 {
-	from {bottom: 0; right: 0;}
-	to {top: 0; left: 0;}
+	from {left: 1999px; bottom: -9px;}
+	to {left: -999px; bottom: 999px;}
 }
 
 .mainWrap .content01 {
