@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>shadow</title>
+	<style>
+		body {
+			background-color: #000;
+		}
+		div.blur {
+			transition: 0.3s;
+			color: #fff;
+		}
+		div.blur:hover {
+			text-shadow: 3px 3px gray;
+		}
+		div.shadow {
+			text-shadow: 0 0 5px white, -3px -3px 3px #fff;
+			color: gray;
+		}
+		div.box {
+			width: 120px;
+			height: 120px;
+			margin: 0 auto;
+			background-color: #fff;
+			text-align: center;
+			line-height: 120px;
+			_box-shadow: 5px 5px yellow;
+			transition: 0.5s;
+		}
+		div.box:hover {
+			box-shadow: 5px 5px 5px yellow, -5px -5px 5px red;
+		}
+	</style>
+</head>
+<body>
+	<div class="blur">drop shadow</div>
+	<div class="shadow">drop shadow</div>
+	<div class="box">BOX SHADOW</div>
+</body>
+</html>
