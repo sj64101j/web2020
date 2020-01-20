@@ -384,23 +384,33 @@ div.eventWrap .txtWrap img {
 	margin-top: -40px;
 	right: 50%;
 	margin-right: -230px;
-	transform: rotate(30deg);
+	/*transform: rotate(30deg);
 	animation-name: myani1;
 	animation-duration: 2s;
 	animation-timing-function: ease-in;
 	animation-iteration-count: infinite;
-	animation-direction: alternate;
+	animation-direction: alternate;*/
 }
 
+.swing {
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-animation-name: swing;
+    animation-name: swing;
+    animation-iteration-count: infinite;
+}
+
+/*
 @keyframes myani1 {
 	from {}
 	to {}
 }
+*/
 
 div.eventWrap .txtWrap h3 {
 	font-size: 24px;
 	color: #d10000;
-	padding-left: 230px;
+	padding-left: 200px;
 }
 
 div.eventWrap .txtWrap p {
@@ -410,7 +420,7 @@ div.eventWrap .txtWrap p {
 	top: 50%;
 	right: 50%;
 	margin-top: 80px;
-	margin-right: -145px;
+	margin-right: -115px;
 	font-weight: bold;
 }
 
