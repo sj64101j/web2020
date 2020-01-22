@@ -28,6 +28,27 @@
 		});
 
 		});
+		
+		$(document).ready(function(){
+			var mySlide2 = $(".slider2").bxSlider({
+				//pager:false,            // 현재 위치 페이징 표시 여부 설정.
+				moveSlides:1,         // 슬라이드 이동시 갯수 설정.
+				slideWidth:170,        // 슬라이드 마다 너비 설정.
+				minSlides:5,           // 최소 노출 개수를 설정합니다.
+				maxSlides:5,          // 최대 노출 개수를 설정합니다.
+				slideMargin:50,      // 슬라이드간의 간격을 설정합니다.
+				auto:true,             // 자동으로 흐를지 설정합니다.
+				//autoHover:true    // 마우스 오버시 정시킬지 설정합니다}.
+			});
+			
+			$(".nextBtn2").click(function(){
+			mySlide2.goToNextSlide();
+			});
+
+			$(".prevBtn2").click(function(){
+				mySlide2.goToPrevSlide();
+			});
+		});
 	</script>
 </head>
 <body>
@@ -84,7 +105,7 @@
 			<li><img src="images/slider02.png" alt=""></li>
 			<li><img src="images/slider03.png" alt=""></li>
 		</ul>
-		<div class="bx_pager">
+		<div class="bx_pager clearfix">
 			<div class="nextBtn">
 				<img src="images/next_btn.png" alt="">
 			</div>
@@ -257,7 +278,41 @@
 				</fieldset>
 			</form>
 		</div>
+		<div class="sliderWrap2">
+			<ul class="slider2 clearfix">
+				<li><a href="#"><img src="images/slider2_01.png" alt=""></a></li>
+				<li><a href="#"><img src="images/slider2_02.png" alt=""></a></li>
+				<li><a href="#"><img src="images/slider2_03.png" alt=""></a></li>
+				<li><a href="#"><img src="images/slider2_04.png" alt=""></a></li>
+				<li><a href="#"><img src="images/slider2_05.png" alt=""></a></li>
+				<li><a href="#"><img src="images/slider2_06.png" alt=""></a></li>
+				<li><a href="#"><img src="images/slider2_07.png" alt=""></a></li>
+			</ul>
+		</div>
+		<div class="bx_pager2 clearfix">
+			<div class="nextBtn2">
+				<img src="images/next_btn.png" alt="">
+			</div>
+			<div class="prevBtn2">
+				<img src="images/prev_btn.png" alt="">
+			</div>
 	</div>
+	</div>
+	
+	
+	<footer>
+		<ul class="clearfix">
+			<li><a href="#">HOME</a></li>
+			<li><a href="#">COMPANY</a></li>
+			<li><a href="#">AGREEMENT</a></li>
+			<li><a href="#">PRIVACY</a></li>
+		</ul>
+		<h4>COMPANY INFO</h4>
+		<p>규미샵 CEO 전규미 TEL 010-1234-5678 | 서울 구로구 경인로 557 삼영빌딩 | 담당자 이메일 | 전규미(GYUMISHOP@naver.com)</p>
+		<h4>CUSTOMER CENTER</h4>
+		<h3>010-1234-5678</h3>
+		<span>COPYRIGHT (c) FUNFUN CULTURE CENTER. ALL RIGHTS RESERVED.</span>
+	</footer>
 </body>
 </html>
 
