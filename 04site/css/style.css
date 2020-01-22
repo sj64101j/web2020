@@ -339,6 +339,7 @@ div.eventWrap {
 	width: 100%;
 	height: 300px;
 	background-color: #fab49b;
+	margin-bottom: 52px;
 }
 
 div.eventWrap>.event {
@@ -392,12 +393,13 @@ div.eventWrap .txtWrap img {
 	animation-direction: alternate;*/
 }
 
-.swing {
-    -webkit-transform-origin: top center;
-    transform-origin: top center;
-    -webkit-animation-name: swing;
-    animation-name: swing;
-    animation-iteration-count: infinite;
+.tada {
+	-webkit-transform-origin: top center;
+	transform-origin: top center;
+	-webkit-animation-name: tada;
+	animation-name: tada;
+	animation-iteration-count: infinite;
+	animation-duration: 1.2s;
 }
 
 /*
@@ -422,6 +424,47 @@ div.eventWrap .txtWrap p {
 	margin-top: 80px;
 	margin-right: -115px;
 	font-weight: bold;
+}
+/*eventWrap end*/
+
+/*reviewWrap start*/
+.reviewWrap {
+	width: 1120px;
+	height: 1425px;
+	margin: 0 auto;
+}
+
+.reviewWrap>.review {
+	width: 1120px;
+	height: 97px;
+}
+
+.review>a {
+	display: block;
+	width: 100%;
+	height: 46px;
+	background-color: #fff;
+	text-align: center;
+	font-size: 18px;
+	border: 1px solid #fab49b;
+	line-height: 46px;
+	color: #222;
+	font-weight: 600;
+	margin-bottom: 18px;
+}
+
+div.reviewWrap fieldset {
+	border: 0 none;
+	float: right;
+}
+
+div.reviewWrap fieldset>select {
+	width: 112px;
+	height: 35px;
+	border: 1px solid #fab49b;
+	font-size: 18px;
+	color: #555;
+	font-weight: 600;
 }
 
 

@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>한국대학교</title>
+	<link rel="stylesheet" href="css/colorbox.css">
 	<link rel="stylesheet" href="css/jquery.bxslider.css">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -10,6 +11,7 @@
 	
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/jquery.bxslider.js"></script>
+	<script src="js/jquery.colorbox.js"></script>
 	
 	<script>
 	$(document).ready(function(){
@@ -49,6 +51,19 @@
 				});
 			
 		})
+		
+		
+		
+	</script>
+	<script>
+		$(document).ready(function(){
+				$(".youtube").colorbox({
+					rel:"modal",
+					iframe:true,
+					innerWidth:600,
+					innerHeight:338
+				});
+		});
 	</script>
 	
 </head>
@@ -217,7 +232,7 @@
 			<li>
 				<div class="video">
 					<img src="images/sc03.png" alt="">
-					<a href="#">
+					<a href="https://www.youtube.com/embed/PzUZ1zP940U" class="youtube">
 					<img src="images/play-button02.png" alt="">
 					</a>
 				</div>

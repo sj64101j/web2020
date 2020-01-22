@@ -275,6 +275,16 @@ div.slider_pager {
 	right: 400px;
 }
 
+.bx-wrapper .bx-prev {
+    left: 10px;
+	background-image: none;
+}
+
+.bx-wrapper .bx-next {
+    right: 10px;
+    background-image: none;
+}
+
 div.contant02>ul>li:first-child .bx-wrapper .bx-pager.bx-default-pager a.active{
     background: #1252b6;
 }
