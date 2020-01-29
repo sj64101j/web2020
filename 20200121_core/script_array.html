@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>array</title>
+	<style>
+		
+		body {
+			color: darkblue;
+			font-size: 24px;
+		}
+	</style>
+	<script>
+		//var city = "Seoul";
+		//var city1 = "Busan";
+		//var city2 = "Inceon"
+		
+		var city = ["Seoul", "Busan", "Inceon","Mokpo","Sejong"];
+		var cityNum = city.length;
+		//alert(cityNum);
+		//document.write(cityNum);
+		//console.log(cityNum);
+		//city.length;
+		for(var i=0;i<cityNum;i++){
+			document.write(i+"번째 자료는 "+city[i]+" 입니다."+"<br><hr>");
+		}
+		//document.write(city[0]+"<br>");
+		//document.write(city[1]+"<br>");
+		//document.write(city[2]);
+	</script>
+	<script>
+		var city1 = ["서울","경기","부산","인천"];
+		console.log("city의 개수 : " + city.length);
+		function printArr(){
+			for(var i=0;i<city1.length;i++){
+				document.write("배열데이터 ["+i+"] = "+city1[i]+"<br><hr>");
+			}
+		}
+		printArr();
+	</script>
+	<script>
+		var com = [95,75,85,65,70,60,99,48,76,55]; //점수 입력
+		console.log("com count" + com.length);
+		function printAvg(){
+			var sum = 0;
+			var n = com.length;
+			for(var i=0;i<n;i++){
+				if(com[i]===undefined) {
+					continue
+				}
+				sum = sum + com[i]; //sum += com[i];
+			}
+			return (sum/n); //평균값이기 때문에 나눠줌, sum값은 합계
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<script>
+			var getAvg = printAvg(); //함수 호출
+			document.write("평균값 : " + getAvg);
+		</script>
+	</div>
+	
+	<script>
+		var arrdata = [];
+		function insertArr(){
+			for(var i=0;i<=99;i++){
+				arrdata[i] = i+1;
+			}
+			selectArr();
+		}
+		function selectArr(){
+			var num = arrdata.length;
+			for(var k=0;k<num;k++){
+				document.write(arrdata[k]+",");
+			}
+			addArr();
+		}
+		function addArr(){
+			var sum = 0;
+			for(var i=0;i<arrdata.length;i++){
+				sum = sum + arrdata[i];
+			}
+			document.write("<p> 배열데이터의 합 : "+sum+"</p>")
+			document.write("<a href='script_array.html'>돌아가기</a>")
+		}
+	</script>
+	<button type="button" onclick="insertArr()">배열 생성/조회/연산</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

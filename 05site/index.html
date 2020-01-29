@@ -12,9 +12,142 @@
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/jquery.bxslider.js"></script>
 	<script src="js/jquery.colorbox.js"></script>
-	<script src="js/wow.js"></script>
+	<script src="js/wow.js"></script><script>
+		$(document).ready(function(){
+			$(".slider").bxSlider({
+				auto:true,
+				controls:false
+			});
+		});
+	</script>
+	<script>
+	$(document).ready(function(){
+		$(".modal").colorbox({
+			rel:"modal"
+		});
+		$(".youtube").colorbox({
+			iframe:true,
+			innerWidth:560,
+			innerHeight:315
+		});
+	});
+	</script>
 </head>
 <body>
-	
+	<header id="main_header">
+		<div id="header_top" class="clearfix">
+			<h1><a href="#"><img src="images/hd_logo_Main.png" alt=""></a></h1>
+			<nav id="main_menu">
+				<ul class="clearfix">
+					<li><a href="#">재단소개</a></li>
+					<li><a href="#">축제준비</a></li>
+					<li><a href="#">재단소식</a></li>
+					<li><a href="#">자료실</a></li>
+					<li><a href="#">머드화장품</a></li>
+				</ul>
+			</nav>
+		</div>
+		
+		<div class="slider_wrap">
+			<ul class="slider">
+				<li class="slide_1st">
+					<!--<img src="images/mainimg01.jpg" alt="">-->
+					<div class="slider_txt">
+						<h3><img src="images/main_txt01.png" alt="가자! 보령으로 놀자! 머드로"></h3>
+						<h1 class="clearfix">
+						<p>D</p>
+						<img src="images/dot_22x21_fff.png" alt="도트">
+						<p>171</p>
+						</h1>
+						<h2>
+						<img src="images/main_txt02.png" alt="제23회 보령머드축제">
+						<p>2020년 7월17일(금) ~ 7월26일(일)<br>대천해수욕장</p>
+						</h2>
+					</div>
+				</li>
+				<li class="slide_2nd">
+					<!--<img src="images/mainimg01.jpg" alt="">-->
+					<div class="slider_txt">
+						<h3><img src="images/main_txt01.png" alt="가자! 보령으로 놀자! 머드로"></h3>
+						<h1 class="clearfix">
+						<p>D</p>
+						<img src="images/dot_22x21_fff.png" alt="도트">
+						<p>171</p>
+						</h1>
+						<h2>
+						<img src="images/main_txt02.png" alt="제23회 보령머드축제">
+						<p>2020년 7월17일(금) ~ 7월26일(일)<br>대천해수욕장</p>
+						</h2>
+					</div>
+				</li>
+				<li class="slide_3th">
+					<!--<img src="images/mainimg01.jpg" alt="">-->
+					<div class="slider_txt">
+						<h3><img src="images/main_txt01.png" alt="가자! 보령으로 놀자! 머드로"></h3>
+						<h1 class="clearfix">
+						<p>D</p>
+						<img src="images/dot_22x21_fff.png" alt="도트">
+						<p>171</p>
+						</h1>
+						<h2>
+						<img src="images/main_txt02.png" alt="제23회 보령머드축제">
+						<p>2020년 7월17일(금) ~ 7월26일(일)<br>대천해수욕장</p>
+						</h2>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<ul class="clearfix">
+				<li class="content1st">
+					<img src="images/content_img01.png" alt="머드란?">
+				</li>
+				<li class="content2nd">
+					<img src="images/content_img02.png" alt="머드란?" class="bgImg">
+					<a href="http://www.mudfestival.or.kr/content/prs_intro.php">
+							<p>자세히 보기</p>
+							<img src="images/search_icon.png" alt="자세히보기">
+						</a>
+				</li>
+				<li class="content3th">
+					<a href="http://www.mudfestival.or.kr/bbs/board.php?bo_table=notice">
+						<h3>공지사항</h3>
+						<p>2020 설 연휴를 맞이하여<br>우리 지역 특산품인<br>보령머드화장품을<br>특별 할인 판매하고...</p>
+					</a>
+					<img src="images/top_area3.png" alt="공지사항 아이콘">
+				</li>
+				<li class="content4th">
+					<a href="http://www.mudfestival.or.kr/bbs/board.php?bo_table=notice&wr_id=216">
+					<img src="images/content_img03.png" alt="설연휴행사">
+					</a>
+				</li>
+				<li class="content5th">
+					<img src="images/content_img04.png" alt="머드화장품 베스트상품">
+					<img src="images/right.gif" alt="화살표" class="arrow">
+				</li>
+				<li class="content6th">
+					<img src="images/content_img05.png" alt="머드화장품">
+					<a href="http://www.mudfestival.or.kr/shop/sp_made.php">
+						<img src="images/product_logo.png" alt="생산과정 보러가기">
+					</a>
+				</li>
+				<li class="content7th">
+					<a href="http://www.mudfestival.or.kr/shop/list.php" class="link">
+						<p>머드화장품</p>
+					</a>
+					<a href="http://www.mudfestival.or.kr/shop/list.php">
+					<img src="images/top_area1_1.png" alt="">
+					</a>
+				</li>
+				<li class="content8th">
+					<img src="images/content_img06.png" alt="" class="">
+					<a href="https://www.youtube.com/embed/0ixpCfHiEaw" class="youtube">
+						<img src="images/youtube.png" alt="유튜브 재생버튼" class="block">
+						<img src="images/youtube(1).png" alt="유튜브 재생버튼" class="none">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</header>
 </body>
 </html>
