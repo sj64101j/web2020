@@ -10,6 +10,7 @@ header#main_header {
 	height: 1640px;
 	position: relative;
 	margin: 0 auto;
+	margin-bottom: 80px;
 }
 #header_top {
 	width: 1260px;
@@ -263,7 +264,7 @@ header#main_header {
 	position: absolute;
 	top: 50%;
 	right: 50%;
-	margin-right: -104px;
+	margin-right: -107px;
 }
 .content>ul>li.content7th a.link p {
 	text-align: right;
@@ -308,7 +309,74 @@ header#main_header {
 
 
 
-
+/*container*/
+.container {
+	height: 730px;
+	background-image: url(../images/container_bg.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	margin-bottom: 80px;
+}
+.container .section {
+	width: 1260px;
+	margin: 0 auto;
+	padding-top: 70px;
+}
+.container .section h4 {
+	text-align: center;
+	color: #fff;
+}
+.container .section h4:after {
+	content:"";
+	display: block;
+	width: 50px;
+	height: 3px;
+	font-size: 18px;
+	background-color: #fff;
+	margin: 15px auto;
+}
+.container .section>p {
+	text-align: center;
+	color: #fff;
+	font-size: 48px;
+	margin-bottom: 50px;
+}
+.container .vision li {
+	float: left;
+	width: 315px;
+	height: 380px;
+	position: relative;
+}
+.container .vision li:hover {
+	box-shadow: 8px 8px 10px rgba(0,0,0,0.5); /*그림자*/
+	transform: translate(-10px,10px); /*튀어나오는 것 같은 효과*/
+	transition: .3s;
+}
+.container .vision li .card {
+	padding-top: 30px;
+}
+.container .vision li img {
+	margin: 0 auto;
+}
+.container .vision li .year {
+	_width: 220px;
+	padding-top: 90px;
+	margin-bottom: 35px;
+}
+.container .vision li .character {
+	position: absolute;
+	top: 30px;
+	right: 50%;
+	margin-right: -100px;
+	width: 200px;
+}
+.container .vision li p {
+	font-size: 18px;
+	color: #ccc;
+	text-align: center;
+}
 
 
 
