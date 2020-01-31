@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .btn {
+                color: #2f353a;
+                background-color: transparent;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                user-select: none;
+                border: 1px solid transparent;
+                padding: .375rem .75rem;
+                font-size: .875rem;
+                line-height: 1.5;
+                cursor:pointer;
+                transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                border-color: #2f353a;
+            }
+            .btn.active {
+                color: #fff;
+                background-color: #2f353a;
+                border-color: #2f353a;
+            }
+            .btn:hover {
+                text-decoration: none;
+                color: #fff;
+                background-color: #2f353a;
+                border-color: #2f353a;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="btn" data-target="#target1">type1</button>
+        <button class="btn" data-target="#target2">type2</button>
+        <button class="btn" data-target="#target3">type3</button>
+        <button class="btn" data-target="#target4">type4</button>
+ 
+        <div id="target1" style="display:none;">hello</div>
+        <div id="target2" style="display:none;">world</div>
+        <div id="target3" style="display:none;">html</div>
+        <div id="target4" style="display:none;">menus</div>
+ 
+        <script type="text/javascript">
+            document.querySelectorAll('button.btn').forEach(el => {
+                el.addEventListener('click', (event) => {
+                    document.querySelectorAll('button.btn').forEach(element => {
+element.className= "btn";
+                        document.querySelector(element.getAttribute('data-target')).style="display:none;";
+                    });
+                    event.target.className = "btn active";
+                    console.log(event.target.getAttribute('data-target'));
+                    document.querySelector(event.target.getAttribute('data-target')).style="display:block;";
+                });
+            });
+        </script>
+    </body>
+</html>

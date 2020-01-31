@@ -442,7 +442,7 @@ div.eventWrap .txtWrap img {
 
 .tada {
 	-webkit-transform-origin: top center;
-	transform-origin: top center;
+	transform-origin: center;
 	-webkit-animation-name: tada;
 	animation-name: tada;
 	animation-iteration-count: infinite;
