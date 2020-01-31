@@ -11,6 +11,7 @@ header#main_header {
 	position: relative;
 	margin: 0 auto;
 	margin-bottom: 80px;
+	min-width: 1260px;
 }
 header#sub_header {
 	position: relative;
@@ -163,6 +164,7 @@ header#sub_header {
 	left: 50%;
 	margin-left: -630px;
 	bottom: 0;
+	min-width: 1260px;
 }
 
 .content>ul>li {
@@ -330,6 +332,7 @@ header#sub_header {
 	background-attachment: fixed;
 	background-size: cover;
 	margin-bottom: 80px;
+	min-width: 1260px;
 }
 .container .section {
 	width: 1260px;
@@ -410,6 +413,7 @@ header#sub_header {
 	width: 1260px;
 	margin: 0 auto;
 	margin-bottom: 80px;
+	min-width: 1260px;
 }
 .contest ul>li {
 	float: left;
@@ -490,6 +494,7 @@ header#sub_header {
 	height: 315px;
 	margin: 0 auto;
 	margin-bottom: 80px;
+	min-width: 1260px;
 }
 .notice ul>li {
 	float: left;
