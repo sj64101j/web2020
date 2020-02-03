@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--반응형 화면 비율 키워드 meta:vp + tab-->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>media</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.container {
+			width: 90%; /*바디 문서의 90%*/
+			border: 5px solid #000;
+			margin: 0 auto;
+		}
+		.col { /*.container의 20%*/
+			float: left;
+			width: 20%;
+			height: 100px;
+			text-align: center;
+		}
+		.container .col:nth-child(1) {
+			background-color: coral;
+		}
+		.container .col:nth-child(2) {
+			background-color: plum;
+		}
+		.container .col:nth-child(3) {
+			background-color: orange;
+		}
+		.container .col:nth-child(4) {
+			background-color: cornflowerblue;
+		}
+		.container .col:nth-child(5) {
+			background-color: darkcyan;
+		}
+		@media screen and (max-width:960px){
+			.col{width: 50%;}
+			.md-w{
+				_width: 100%;
+				display: none;
+			}
+		}
+		@media screen and (max-width:540px){
+			.col{width: 100%;}
+			.md-w {
+				display: block;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container clearfix">
+		<div class="col"></div>
+		<div class="col"></div>
+		<div class="col"></div>
+		<div class="col"></div>
+		<div class="col md-w"></div>
+	</div>
+</body>
+</html>
