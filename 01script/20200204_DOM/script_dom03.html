@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<style>
+		#myDiv {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script>
+		function creatDiv(){
+			var obj = document.getElementById("parent");
+			/* =>(같음) var obj = document.getElementsByTagName("body")[0]*/
+			var newDiv = document.createElement("div");
+			newDiv.innerHTML = "새로 생성된 div입니다."
+			newDiv.setAttribute("id","myDiv");
+			//id값에 myDiv를 넣는다
+			newDiv.style.backgroundColor = "pink"
+			
+			newDiv.onclick = function(){ //function()→무명함수
+				var p = this.parentElement; //부모자를 찾아줌
+				console.log(p);
+				p.removeChild(this); //removeChild→자식요소를 지운다
+				//this(자기자신)를 지운다
+			}
+			
+			obj.appendChild(newDiv);
+		}
+	</script>
+</head>
+<body id="parent">
+	<h3>DIV생성</h3>
+	<hr>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste deleniti architecto dolore aspernatur suscipit pariatur vero necessitatibus repellendus esse deserunt?</p>
+	<a href="#" onclick="creatDiv()">DIV생성</a>
+</body>
+</html>

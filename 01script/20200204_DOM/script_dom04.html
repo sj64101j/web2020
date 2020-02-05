@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<script>
+		function creatDiv(){
+			var obj = document.getElementById("parent");
+			var newDiv = document.createElement("div");
+			newDiv.innerHTML = "새로 생성된 div입니다."
+			newDiv.setAttribute("id","myDiv");
+			newDiv.style.backgroundColor = "pink"
+			
+			newDiv.onclick = function(){
+				var p = this.parentElement;
+				console.log(p);
+				p.removeChild(this);
+			}
+			
+			obj.appendChild(newDiv);
+		}
+	</script>
+</head>
+<body id="parent">
+	<h3>DIV생성</h3>
+	<hr>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, dolore!</p>
+	<button onclick="creatDiv()">div생성</button>
+</body>
+</html>
