@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<style>
+		button#btnAdd{display: none;}
+	</style>
+	<script>
+		//$("선택자").메소드();
+		$(document).ready(function(){
+			$("button#btnAdd").hide();
+			$("button#btnDel").click(function(){
+				$("p").hide(); //p태그를 숨긴다
+				$(this).hide();
+				$("#btnAdd").show();
+			});
+			$("button#btnAdd").click(function(){
+				$("p").show(); //p태그를 보이게
+				$(this).hide();
+				$("#btnDel").show();
+			});
+			
+			console.log($("p").length);
+			
+			var pCount = $("p").length;
+			console.log(pCount);
+			
+			//$("p").eq(0).hide();
+			//$("p").eq(1).hide();
+			
+			$("ul>li").eq(0).addClass;
+			
+			$("ul>li").eq(0).click(function(){
+				$("ul>li").removeClass();
+				$(this).addClass("active");
+				//$("ul>li").eq(1).removeClass("active");
+				//$("ul>li").eq(2).removeClass("active");
+				$(".box1").show();
+				$(".box2").hide();
+				$(".box3").hide();
+			});
+			$("ul>li").eq(1).click(function(){
+				$("ul>li").removeClass();
+				$(this).addClass("active");
+				//$("ul>li").eq(0).removeClass("active");
+				//$("ul>li").eq(2).removeClass("active");
+				$(".box1").hide();
+				$(".box2").show();
+				$(".box3").hide();
+			});
+			$("ul>li").eq(2).click(function(){
+				$("ul>li").removeClass();
+				$(this).addClass("active");
+				//$("ul>li").eq(0).removeClass("active");
+				//$("ul>li").eq(1).removeClass("active");
+				$(".box1").hide();
+				$(".box2").hide();
+				$(".box3").show();
+			});
+			// 숨긴 뒤에 보여줘야 함.. 안그럼 노출 x
+		});
+	</script>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<p>Consequatur cumque distinctio velit porro.</p>
+	<button id="btnDel">메세지삭제</button><br><br>
+	<button id="btnAdd">메세지추가</button>
+	
+	<style>
+		ul>li {
+			float: left;
+			border: 2px solid pink;
+			padding: 10px;
+			cursor: pointer;
+			margin-right: 10px;
+			border-radius: 5px;
+		}
+		ul>li:last-child {
+			margin-right: 0;
+		}
+		div {
+			display: none;
+		}
+		li.active {
+			background-color: pink;
+		}
+	</style>
+	
+	<ul class="clearfix">
+		<li>menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+	</ul>
+	
+	<div class="box1">1 : Lorem ipsum dolor sit amet.</div>
+	<div class="box2">2 : Harum architecto maiores reiciendis perspiciatis!</div>
+	<div class="box3">3 : Ipsa quae, expedita nostrum dolore!</div>
+	
+	
+</body>
+</html>

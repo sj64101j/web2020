@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>event</title>
+	<script>
+		var width = 1; //증감연산자 볼더의 width값 잡아줌
+		function down(obj){
+			obj.style.fontStyle = "italic";
+		}
+		function up(obj){
+			obj.style.fontStyle = "normal";
+		}
+		function over(obj){
+			obj.style.borderColor = "violet";
+		}
+		function out(obj){
+			obj.style.borderColor = "lightgray";
+		}
+		function wheel(e,obj){
+			//휠을 움직일 때마다 e(event)가 실행됨
+			//위로 올리면 양수 아래로 내리면 음수
+			console.log(e,wheelDelta);
+			if(e,wheelDelta<0){ //휠을 아래로 내릴 때
+				width = width - 1; //width--;
+				if(width<0){width=0}
+				//width가 0보다 작으면 width를 0으로 넣어라
+			}else{//휠을 위로 올릴 때
+				width = width + 1; //width++;
+			}
+			console.log(width);
+			
+			obj.style.borderStyle = "ridge";
+			obj.style.borderColor = "skyblue";
+			obj.style.borderWidth = width + "px";
+			//px값을 꼭 넣어줘야함
+		}
+	</script>
+</head>
+<body>
+	<h3>mouse</h3>
+	<hr>
+	<div>마우스 관련 <span 
+	onmousedown="down(this)"
+	onmouseup="up(this)"
+	onmouseover="over(this)"
+	onmouseout="out(this)"
+	onwheel="wheel(event,this)"
+	>이벤트</span>가 발생합니다</div>
+</body>
+</html>

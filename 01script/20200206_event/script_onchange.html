@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>onchange</title>
+	<script>
+		function changeImage(){
+			var sel = document.getElementById("sel")
+			var img = document.getElementById("myImg")
+			
+			var index = sel.selectedIndex;
+			console.log(sel.options[index].value);
+			//셀 값에서 옵션중 0번째의 value를 가져오겠다
+			
+			//img.src = "../../images/banana.png";
+			//↑ 이미지 바꾸기
+			img.src = sel.options[index].value;
+			//이미지의 소스를 sel의 옵션 중 각 value값을 가져오겠다 → 위에서 선언한 img함수 = myImg
+			
+			console.log(img.width + " X " + img.height);
+			var mySpan = document.getElementById("mySpan");
+			mySpan.innerHTML = img.width + " X " + img.height;
+		}
+		
+		window.onload = function(){
+		var img = document.getElementById("myImg");
+		var mySpan = document.getElementById("mySpan");
+		mySpan.innerHTML = img.width + " X " + img.height;
+		};
+	</script>
+</head>
+<body>
+	<h3>onchange</h3>
+	<hr>
+	<form>
+		<select id="sel" onchange="changeImage()">
+			<option value="../../images/apple.png">사과</option>
+			<option value="../../images/banana.png">바나나</option>
+			<option value="../../images/testimg.jpg">에펠탑</option>
+		</select>
+		<span id="mySpan">이미지 크기</span>
+	</form>
+	<br>
+	<img src="../../images/apple.png" alt="사과" id="myImg">
+</body>
+</html>

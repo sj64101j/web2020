@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>event</title>
+	<script>
+		function init(){
+			var p = document.getElementById("p");
+			var div = document.getElementById("div");
+			
+			p.onmouseover = over; //p에 마우스 오버했을 때
+			p.onmouseout = function(){
+				/*p.style.backgroundColor = "white";*/
+				this.style.backgroundColor = "cyan";
+			}; //p에 마우스 아웃했을 때
+			
+			
+			div.addEventListener("mouseover",overDiv);
+			div.addEventListener("mouseout",
+													function(){
+				div.style.backgroundColor = "skyblue"
+			});
+		}
+		
+		
+		function over(){
+			p.style.backgroundColor = "orchid";
+		}
+		function overDiv(){
+			div.style.backgroundColor = "pink";
+		}
+		/*function outDiv(){
+			div.style.backgroundColor = "skyblue";
+		}*/
+		/*function out(){
+			p.style.backgroundColor = "white";
+		}*/
+	</script>
+</head>
+<body onload="init()"> <!--초기값 init=이니셜-->
+	<h3>Lorem ipsum dolor.</h3>
+	<hr>
+	<p id="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, officia?</p>
+	<div id="div">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, adipisci.</div>
+</body>
+</html>

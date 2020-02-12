@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>calc</title>
+	<script>
+		var sum = 0;
+		function calc(cBox){
+			if(cBox.checked){ //cBox가 체크되면
+			sum += parseInt(cBox.value) //sum+cBox의 value값
+			}else{ //cBox가 체크되지 않으면
+				sum -= parseInt(cBox.value);//sum-cBox의 value값
+			}
+			console.log(sum);
+			
+			document.getElementById("sumtext").value = sum;
+			//아이디가 sumtext인 곳의 value값을 sum으로 넣는다
+		}
+	</script>
+</head>
+<body>
+	<form>
+	<input type="checkbox" name="hap" value="10000" onclick="calc(this)">모자 1만원<br>
+	<input type="checkbox" name="shose" value="100000" onclick="calc(this)">신발 10만원<br>
+	<input type="checkbox" name="bag" value="50000" onclick="calc(this)">가방 5만원<br>
+	지불할 금액 <input type="text" id="sumtext" value="0">
+	</form>
+</body>
+</html>

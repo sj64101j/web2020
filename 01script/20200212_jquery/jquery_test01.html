@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>images</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<style>
+		.contentWrap ul li {
+			float: left;
+			text-align: center;
+			height: 40px;
+			margin-right: 10px;
+		}
+		.contentWrap ul li:last-child {
+			margin-right: 0;
+		}
+		.content img {
+			display: none;
+		}
+		.content img:first-child {
+			display: block;
+		}
+		
+	</style>
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".contentWrap>ul>li").click(function(){
+				var liNum = $(this).index();
+				$(".content>img").hide();
+				$(".content>img").eq(liNum).show();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="contentWrap">
+		<ul class="clearfix">
+			<li><img src="../images/btn1_1.jpg" alt=""></li>
+			<li><img src="../images/btn2_1.jpg" alt=""></li>
+			<li><img src="../images/btn3_1.jpg" alt=""></li>
+			<li><img src="../images/btn4_1.jpg" alt=""></li>
+		</ul>
+		<div class="content">
+			<img src="../images/spring.jpg" alt="">
+			<img src="../images/summer.jpg" alt="">
+			<img src="../images/fall.jpg" alt="">
+			<img src="../images/winter.jpg" alt="">
+		</div>
+	</div>
+</body>
+</html>

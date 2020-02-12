@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>settimeout</title>
+	<!--<script>
+		function myAlert(time){
+			alert(time + "초 후 1번 실행됩니다.");
+		}
+		setTimeout("myAlert(3)",3000);
+	</script>-->
+</head>
+<body>
+	<span id="div" style="background-color: yellowgreen">안녕하세요</span><br>
+	<a href="#" onclick="rotate()" style="display: none">클릭</a>
+	<a href="#" onclick="stop()">멈춤</a>
+	<a href="#" onclick="restart()">재실행</a>
+	<script>
+		var div=document.getElementById("div");
+		
+		function rotate(){
+			var str = div.innerHTML;
+			var firstChar = str.substr(0,1);
+			//firstChar → 첫번째 자식
+			//substr 글자를 쪼갬
+			var remains = str.substr(1,str.length-1)
+			
+			str = remains + firstChar;
+			console.log(str);
+			div.innerHTML = str;
+		}
+		var timerId = setInterval("rotate()",200);
+		//timerId로 이름짓기
+		
+		function stop(){
+			clearInterval(timerId); //멈춤
+		}
+		
+		function restart(){
+			timerId = setInterval("rotate()",200);
+		}
+		
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

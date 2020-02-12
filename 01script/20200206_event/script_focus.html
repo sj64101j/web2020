@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>focus</title>
+	<script>
+		function check(obj){
+			//alert(obj.value);
+			if(obj.value == ""){ //obj의 value값이 비어있다면
+				alert("이름칸이 비어있습니다.");//enter name
+				//obj.focus();
+			}
+		}
+	</script>
+</head>
+<body onload="document.getElementById('name').focus();">
+	<form>
+		이름 <input type="text" id="name" onblur="check(this)" value=""><br>
+		전화번호 <input type="text" id="call"><br>
+		
+		<input type="radio" value="서울" name="kcity" checked> 서울
+		<input type="radio" value="부산" name="kcity"> 부산
+		<input type="radio" value="대구" name="kcity"> 대구
+		<input type="button" value="find checked" onclick="findChecked()">
+	</form>
+</body>
+</html>
+
+
+
+
+<!--onblur = 포커싱 된 것을 빼냄-->

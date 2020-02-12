@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>open</title>
+	<script>
+		function load(url){ //함수 불러쓰기
+			window.open(url,"naver","resizable=no","width=300,height=300");
+			//window창을 열겠다("url주소","이름","창의 크기")
+			//http://www.naver.com대신 url작성 가능 대신 함수에 url값을 작성해야함
+		}
+	</script>
+</head>
+<body>
+	<a href="http://www.naver.com" target="_blank">네이버</a>
+	<!-- _blank → 새창으로 열기 -->
+	<hr>
+	<a href="#" onclick="load('http://www.naver.com')">링크1</a><br>
+	<a href="#" onclick="load('http://www.daum.net')">링크2</a><br>
+	<a href="javascript:load('script_view.html')">링크3</a>
+</body>
+</html>
