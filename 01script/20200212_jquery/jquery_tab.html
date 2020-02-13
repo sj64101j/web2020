@@ -46,7 +46,8 @@
 				//$("contentWrap > ul > li").eq(liNum).addClass("active")
 				
 				$(".contentTxt>div").hide(); //div 숨김
-				$(".contentTxt>div").eq(liNum).show();
+				//$(".contentTxt>div").eq(liNum).show();
+				$(".contentTxt>div").eq(liNum).fadeIn();
 				//각번째 div를 보여줌
 			});
 			//숨긴 뒤 보여줘야함 (*순서 중요*) 순서 바뀌면 노출 안됨

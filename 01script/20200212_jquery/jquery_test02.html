@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<style>
+		.contentWrap {
+			width: 1000px;
+			margin: auto;
+			padding-top: 10px;
+		}
+		.contentWrap .gnb {
+			margin-bottom: 20px;
+		}
+		.contentWrap ul {
+			display: table;
+			width: 1000px;
+		}
+		.contentWrap ul li {
+			display: table-cell;
+		}
+		.contentWrap ul li a {
+			display: block;
+			height: 50px;
+			text-align: center;
+			padding: 0 10px;
+			border-bottom: 1px solid #000;
+			border-top: 2px solid #cdcdcd;
+			line-height: 50px;
+			font-weight: bold;
+			position: relative;
+		}
+		.contentWrap ul li a:hover {
+			color: #f00;
+			border-top: 2px solid #f00;
+		}
+		.contentWrap>.gnb>ul>li>a:hover:after {
+			content: "";
+			border-width: 5px;
+			border-style: solid;
+			border-color: #f00 transparent transparent transparent;
+			position: absolute;
+			top: 0;
+			left: 47%;
+		}
+		.contentWrap>.gnb>ul>li>a.active:after {
+			content: "";
+			border-width: 5px;
+			border-style: solid;
+			border-color: #f00 transparent transparent transparent;
+			position: absolute;
+			top: 0;
+			left: 47%;
+		}
+		.contentWrap .content img {
+			width: 1000px;
+		}
+		.contentWrap>.gnb>ul>li>a.active {
+			color: #f00;
+			border-top: 2px solid #f00;
+		}
+	</style>
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script>
+		var viewImg = [
+			"image/img01.jpg",
+			"image/img02.jpg",
+			"image/img03.jpg",
+			"image/img04.jpg",
+			"image/img05.jpg"
+		]
+		$(document).ready(function(){
+			$(".gnb>ul>li").click(function(){
+				var liNum = $(this).index();
+				$(".content>img").attr("src",viewImg[liNum])
+			});
+			
+			
+			$(".contentWrap > .gnb > ul > li > a").click(function(){
+				var liNum = $(this).index();
+				$(".contentWrap > .gnb > ul > li > a").removeClass();
+				$(this).addClass("active");
+			});
+			//숨긴 뒤 보여줘야함 (*순서 중요*) 순서 바뀌면 노출 안됨
+			
+		});
+	</script>
+</head>
+<body>
+	<div class="contentWrap">
+		<nav class="gnb">
+			<ul class="clearfix">
+				<li><a href="#" class="active">국내1호 정지수 학장</a></li>
+				<li><a href="#">라이브 파티 플래닝 교육과정</a></li>
+				<li><a href="#">생활문화예술을 이끄는 힘</a></li>
+				<li><a href="#">갤러리</a></li>
+				<li><a href="#">언론에 바라본 WOW</a></li>
+			</ul>
+		</nav>
+		<div class="content"><img src="image/img01.jpg" alt=""></div>
+	</div>
+</body>
+</html>
