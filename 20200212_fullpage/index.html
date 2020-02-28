@@ -7,15 +7,41 @@
 	<link rel="stylesheet" href="css/fullpage.css">
 	<link rel="stylesheet" href="css/jquery.bxslider.css">
 	<script src="js/jquery-3.1.1.min.js"></script>
-	<script src="js/jquery.bxslider.js"></script>
 	<script src="js/jquery.fullPage.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
 	<script>
 		$(document).ready(function(){
 			$("#fullpage").fullpage({
 				anchors:["1st","2st","3st","4st"],
 				menu:"#topMenu",
 				navigation:true,
-				slideNavigation:true
+				slideNavigation:true,
+				afterLoad:function(anchorslink,index){
+					console.log(anchorslink+","+index);
+					
+					if(index == 2){
+						$("#onView").addClass("move");
+					}else{
+						$("#onView").removeClass("move");
+					}
+					if(index == 3){
+						$("#onView2").addClass("move2");
+					}else {
+						$("#onView2").removeClass("move2");
+					}
+				}
+			});
+			$(window).resize(function(){
+				wind();
+			});
+			function wind(){
+				var wHeight = $(window).height();
+				$(".slider1").height(wHeight);
+			}
+			wind();
+			//$("대상").height(크기값)
+			$(".sliderWrap").bxSlider({
+				pager:false
 			});
 		});
 	</script>
@@ -28,8 +54,11 @@
 			background-color: rgba(255,255,255,0.3);
 			padding-right: 10px;
 		}
-		#navTop ul li {
+		#navTop ul {
 			float: right;
+		}
+		#navTop ul li {
+			float: left;
 		}
 		#navTop ul li a {
 			display: block;
@@ -47,20 +76,104 @@
 			background-image: url(images/bg3.jpg);
 		}
 		#page4 {
-			background-image: url(images/bg4.jpg);
+			_background-image: url(images/bg4.jpg);
 		}
 		.page {
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
+			text-align: center;
+		}
+		.scroll {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			animation-name: xScroll;
+			animation-duration: .5s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		@keyframes xScroll {
+			from {bottom: 20px;}
+			to {bottom: 30px;}
 		}
 		#navTop .active {
 			background-color: #fff;
 		}
+		.main {
+			width: 400px;
+			position: absolute;
+			left: 50%;
+			color: white;
+			transform: translate(-50%,-50%);
+			text-align: center;
+		}
+		.main h3 {
+			font-size: 3em;
+		}
+		.main p {
+			font-size: 1.5em;
+			margin-bottom: 20px;
+		}
+		.main a {
+			display: block;
+			text-align: center;
+			width: 150px;
+			border: 1px solid #fff;
+			line-height: 35px;
+			color: white;
+			border-radius: 8px;
+			margin: 0 auto;
+			transition: .3s;
+			font-weight: 600;
+		}
+		.main a:hover {
+			background-color: #fff;
+			color: #000;
+		}
+		#onView {
+			top: 20%;
+			transition: .3s;
+			opacity: 0;
+		}
+		#onView.move {
+			top: 50%;
+			opacity: 1;
+		}
+		#onView2 {
+			left: 20%;
+			transition: .3s;
+			opacity: 0;
+		}
+		#onView2.move2 {
+			left: 50%;
+			opacity: 1;
+		}
+		#myVideo {
+			position: absolute;
+			bottom: 0;
+			top: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background-size: 100% 100%;
+			background-color: #000;
+			background-position: center center;
+			object-fit: cover;
+			z-index: 3;
+		}
+		.bx-wrapper {
+			-moz-box-shadow: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			border: 0 none;
+			margin-bottom: 0;
+}
 	</style>
 </head>
 <body>
-	<nav id="navTop">
+	<nav id="navTop" class="clearfix">
 		<ul id="topMenu" class="clearfix">
 			<li data-menuanchor="1st"><a href="#1st">MENU</a></li>
 			<li data-menuanchor="2st"><a href="#2st">MENU</a></li>
@@ -69,10 +182,77 @@
 		</ul>
 	</nav>
 	<div id="fullpage">
-		<div class="section page" id="page1" data-anchor="1st"></div>
-		<div class="section page" id="page2" data-anchor="2st"></div>
-		<div class="section page" id="page3" data-anchor="3st"></div>
-		<div class="section page" id="page4" data-anchor="4st"></div>
+		<div class="section page" id="page1" data-anchor="1st">
+			<video id="myVideo" autoplay muted data-autoplay>
+				<source src="../images/video.mp4">
+			</video>
+			<div class="scroll">
+			<a href="#2st"><img src="images/btn_scroll.png" alt=""></a>
+			</div>
+		</div>
+		<div class="section page" id="page2" data-anchor="2st">
+			<div class="main" id="onView">
+				<h3>Lorem ipsum.</h3>
+				<p>Lorem ipsum dolor sit.</p>
+				<a href="#">MORE</a>
+			</div>
+			<div class="scroll">
+			<a href="#3st"><img src="images/btn_scroll.png" alt=""></a>
+			</div>
+		</div>
+		<div class="section page" id="page3" data-anchor="3st">
+			<div class="main" id="onView2">
+				<h3>Lorem ipsum.</h3>
+				<p>Lorem ipsum dolor sit.</p>
+				<a href="#">MORE</a>
+			</div>
+			<div class="scroll">
+			<a href="#4st"><img src="images/btn_scroll.png" alt=""></a>
+			</div>
+		</div>
+		<div class="section page" id="page4" data-anchor="4st">
+		
+		<!--<style>
+			.slide {
+				position: relative;
+			}
+			.slide .sView1,
+			.slide .sView2,
+			.slide .sView3,
+			.slide .sView4 {
+				position: absolute;
+				width: 500px;
+				height: 500px;
+				background-color: #f00;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+		</style>-->
+		<!--div.slide*4>.sView$>lorem30-->
+		<!--<div class="slide">
+			<div class="sView1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident voluptatem aut quas! Consequuntur porro, iure nihil temporibus. Sed voluptate tempora laborum fuga corporis distinctio enim dolore explicabo accusantium aliquam. Officiis.</div>
+		</div>
+		<div class="slide">
+			<div class="sView2">Doloremque quia explicabo dolorum aut perferendis blanditiis architecto ex repudiandae necessitatibus eius quod ipsum ut quidem rerum accusamus reiciendis, veritatis, laudantium corporis provident, itaque eaque alias inventore illo accusantium. Labore.</div>
+		</div>
+		<div class="slide">
+			<div class="sView3">Voluptatibus totam non ut modi sed natus deleniti alias ea nemo eius consectetur doloribus tempore, ipsam molestiae voluptas quibusdam nihil laborum cumque sunt provident, officia ducimus. Consequatur rerum, enim ipsa.</div>
+		</div>
+		<div class="slide">
+			<div class="sView4">Provident accusantium autem deleniti voluptate, eum, quis adipisci corrupti, nostrum quisquam laboriosam alias sunt magnam eveniet. Eum vel, veritatis quibusdam. Vero nulla ad possimus dolorum dicta dolorem adipisci expedita molestias?</div>
+		</div>-->
+		
+		<div class="sliderWrap">
+			<div class="slider1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel numquam quae explicabo, eos iste. Illo doloremque amet culpa facilis nulla consequuntur similique perferendis impedit, saepe odio nesciunt unde eum vitae sit quidem, sunt quia cumque mollitia reprehenderit ex corrupti vel aliquam fuga! Mollitia, odio consectetur delectus sed qui inventore excepturi.</div>
+			<div class="slider1">Odit iure, necessitatibus, soluta molestias cumque reiciendis. A minus placeat recusandae explicabo magnam numquam perspiciatis quidem harum consectetur blanditiis distinctio alias corporis fuga ipsam, illo ullam quod. Porro reiciendis, rerum illum nam, facilis sapiente, vero voluptas laudantium deserunt provident, quas exercitationem ullam quibusdam impedit minus qui veritatis debitis asperiores incidunt.</div>
+			<div class="slider1">Minus placeat, harum, sit, commodi recusandae alias nisi tempore quae vitae eligendi asperiores sed? Iusto libero earum officia, minus ullam nam tenetur adipisci, vel facere suscipit fuga soluta dignissimos voluptatibus quasi odit repudiandae laudantium corrupti voluptatem, facilis magni dolorum! Optio cupiditate, officiis eum totam, explicabo corporis quod doloremque id aperiam.</div>
+			<div class="slider1">Minus odio iusto reiciendis deleniti esse possimus repudiandae voluptatum reprehenderit labore tempora minima qui nostrum, enim recusandae obcaecati at consectetur laboriosam, unde aut laudantium beatae! Sequi neque odit provident recusandae sunt nostrum debitis, ipsum aspernatur quidem ut cumque, voluptatem similique natus at doloremque iure. Alias cumque nobis ducimus fugiat nam!</div>
+			<div class="slider1">Error perspiciatis consequatur ducimus cumque cum dolorem consectetur maiores voluptatibus, fuga harum similique minima corporis quia beatae nihil eveniet laborum sit blanditiis mollitia omnis iusto accusamus ab voluptatem excepturi. Eum rem totam, necessitatibus quaerat. Provident maxime consectetur vel. Magni natus iure blanditiis distinctio, iste est vel laboriosam reprehenderit aperiam consequatur.</div>
+		</div>
+	</div>
+	<div class="section page fp-auto-height" id="page5" data-anchor="5st">
+		<div class="footer" style="height: 300px; background: skyblue"></div>
+	</div>
 	</div>
 </body>
 </html>

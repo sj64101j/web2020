@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wrapper1 div{
+			font-size: 2em;
+		}
+		.wrapper2 div {
+			font-size: 2rem;
+		}
+	</style>
+	<style>
+		html {color: #cdcdcd; font-size: 20px}
+		.top {
+			color: blue;
+			font-size: 2em;
+		}
+		.top>span {
+			color: initial; /*이니셜(initial) 부모자에게 상속받지 않음*/
+			font-size: initial;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper1">
+		<div>2em_32px
+			<div>
+				2em_64px
+				<div>
+					2em_128px
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper2">
+		<div>2rem_32px
+			<div>
+				2rem_32px
+				<div>
+					2rem_32px
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="top">
+		sejin
+		<span>logo</span>
+	</div>
+</body>
+</html>
+
+
+

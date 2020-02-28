@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>position menu</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../js/jquery-mousewheel.min.js"></script>
+	<script>
+		$(function(){
+			
+			/*
+			
+			//※offset()이란 document객체의 좌측 상단 모서리에서부터 요소까지의 좌표를 가지고오거나 지정하는 메소드 ↓↓
+			
+			basic ↓
+			변수 선언 → #v0$s의 좌표값 문서에서 위에서부터의 값
+			var oneTop = $("#v01s").offset().top;
+			var twoTop = $("#v02s").offset().top;
+			var threeTop = $("#v03s").offset().top;
+			
+			$(".menu>a").eq(0).click(function(){
+				.menu>a의 0번째를 클릭하면
+				$("html").animate({scrollTop:oneTop},300)
+				문서에서 에니메이트 스크롤을 올린다 oneTop으로 300의 속도로 / 1000은 1초
+			});
+			$(".menu>a").eq(1).click(function(){
+				$("html").animate({scrollTop:twoTop},300)
+			});
+			$(".menu>a").eq(2).click(function(){
+				$("html").animate({scrollTop:threeTop},300)
+			});
+			*/
+			/*
+			2ed menu ↓
+			변수 선언 → menu는 $(".menu > a")
+			var menu = $(".menu > a");
+			var section = $(".scene");
+			
+			menu.click(function(){
+				var i = $(this).index();
+				var st = section.eq(i).offset().top;
+				//section의 몇번째의 offset top
+				$("html").animate({scrollTop:st},300)
+			});
+			*/
+			// 3th menu↓
+			$(".menu a").click(function(){
+				//var target = $(this.hash); 생략 후 ↓ 에 삽입해도 됨
+				//var st = target.offset().top;
+				var st = $(this.hash).offset().top;
+				$("html").stop().animate({scrollTop:st},300);
+				return false;
+			});
+			
+			
+			
+			
+			var menu = $(".menu > a");
+			var section = $(".scene");
+			
+			
+			
+			
+			$(window).scroll(function(){
+				
+				//var scrollY = $(window).scrollTop();
+				//scrollTop이 증가되었을 때 나오는 값
+				
+				
+				//basic 1st ↓↓↓↓↓
+				//if($(".scene").eq(0).offset().top <= scrollY){
+				//	$(".menu>a").removeClass("on").eq(0).addClass("on")
+				//}
+				//if($(".scene").eq(1).offset().top <= scrollY){
+				//	$(".menu>a").removeClass("on").eq(1).addClass("on")
+				//}
+				//if($(".scene").eq(2).offset().top <= scrollY){
+				//	$(".menu>a").removeClass("on").eq(2).addClass("on")
+				//}
+				//↓↓↓↓↓
+				
+				
+				
+				//for 2ed
+				//for문을 사용하는 이유 = 반복되는 함수이기 때문
+				/*for(var i=0;i<=2;i++){
+					if($(".scene").eq(i).offset().top <= scrollY){
+					$(".menu>a").removeClass("on").eq(i).addClass("on")
+					}
+				}*/
+				
+				
+				
+				// 3th each ↓↓↓↓↓
+				//each 대상자의 각각 요소를 쓰겠다
+				section.each(function(){
+					var i = $(this).index()-1;
+					console.log(i);
+					
+					if($(this).offset().top<=scrollY){
+						menu.removeClass("on").eq(i).addClass("on");
+					}
+					/*if(secrion.eq(i).offset().top<=scrollY){
+						menu.removeClass("on").eq(i).addClass("on");
+					}*/
+				});
+				
+			});
+			
+		});
+	</script>
+	<style>
+		html,body {
+			height: 100%;
+		}
+		.scene {
+			width: 100%;
+			height: 100%;
+			background-attachment: fixed; /*모바일 사용불가*/
+			background-position: center;
+			/*-webkit-background-size: cover; 익스플로러로 사용할 때*/
+			background-size: cover;
+			position: relative;
+		}
+		.scene.one {
+			background-image: url(../../images/pc01.jpg);
+		}
+		.scene.two {
+			background-image: url(../../images/pc02.jpg);
+		}
+		.scene.three {
+			background-image: url(../../images/pc03.jpg);
+		}
+		.scene div {
+			width: 600px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			color: white;
+			text-align: center;
+		}
+		.scene div h1:after {
+			content: "";
+			width: 100%;
+			height: 1px;
+			background-color: #fff;
+			display: block;
+			margin: 10px;
+		}
+		.menu {
+			position: fixed;
+			width: 100%;
+			height: 40px;
+			background-color: skyblue;
+			top: 0;
+			left: 0;
+			padding-left: 30px;
+			z-index: 1;
+		}
+		.menu a {
+			display: inline-block;
+			line-height: 40px;
+		}
+		.menu a.on {
+			background-color: #f00;
+			transition: .3s;
+		}
+	</style>
+</head>
+<body>
+	<nav class="menu">
+		<a href="#v01s" class="on">menu01</a>
+		<a href="#v02s">menu02</a>
+		<a href="#v03s">menu03</a>
+	</nav>
+	<!--a 태그에만 #을 넣어야 함-->
+		<section class="scene one" id="v01s">
+		<!--div>h1>lorem5^p>lorem20-->
+		<div>
+			<h1>Lorem ipsum dolor sit amet.</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit minima blanditiis maiores impedit praesentium! Quod beatae sapiente, fugit facere. Libero?</p>
+		</div>
+	</section>
+	<section class="scene two" id="v02s">
+		<!--div>h1>lorem5^p>lorem20-->
+		<div>
+			<h1>Lorem ipsum dolor sit amet.</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit minima blanditiis maiores impedit praesentium! Quod beatae sapiente, fugit facere. Libero?</p>
+		</div>
+	</section>
+	<section class="scene three" id="v03s">
+		<!--div>h1>lorem5^p>lorem20-->
+		<div>
+			<h1>Lorem ipsum dolor sit amet.</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit minima blanditiis maiores impedit praesentium! Quod beatae sapiente, fugit facere. Libero?</p>
+		</div>
+	</section>
+</body>
+</html>

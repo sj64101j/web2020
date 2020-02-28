@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>banenr slider</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script>
+		$(function(){
+			/*$("#wrapper li").eq(0).css("top",0).animate({top:"-100%"},1000);
+			//top:"-100%" 혹은 top:"-208"
+			//animate({값},duration값) duration = 지속되는
+			//animate는 이벤트 값 뒤에 붙음
+			$("#wrapper li").eq(1).css("top","100%").animate({top:0},1000);
+			//숫자는 "" 안넣어도 됨 px단위나 %단위는 "" 넣어야 함*/
+			
+			var current = 0;
+			
+			function hanM(){
+				move(current,"0","-100%");
+				current++;
+				if(current==3){current=0};
+				move(current,"100%","0"); //(인자)
+			}
+			setInterval(hanM,3000);
+			//hanM(); //실행
+			function move(index,start,end){ //함수선언 (매개변수)
+				$("#wrapper li").eq(index).css("top",start).stop().animate({top:end});
+			}
+			
+		});
+	</script>
+	<style>
+		img {display: block; width: 500px;}
+		#wrapper {width: 500px;height: 208px;margin: 20px auto;}
+		#wrapper ul {width: 500px;height: 208px;
+			position: relative;background-color: skyblue;
+			overflow: hidden;}
+		#wrapper ul li {position: absolute; top: 100%;}
+		#wrapper ul li:nth-child(1){top: 0;}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<ul>
+			<li><img src="../../images/pc01.jpg" alt=""></li>
+			<li><img src="../../images/pc02.jpg" alt=""></li>
+			<li><img src="../../images/pc03.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

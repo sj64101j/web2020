@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".contentWrap>ul>li").click(function(){
+				var liNum = $(this).index();
+				$(".contentWrap>ul>li").removeClass();
+				$(this).addClass("active");
+				
+				$(".content>div").hide();
+				$(".content>div").eq(liNum).fadeIn();
+			});
+		});
+	</script>
+	<style>
+		.contentWrap {
+			width: 1000px;
+			margin: auto;
+		}
+		.contentWrap li {
+			float: left;
+			width: 20%;
+			height: 40px;
+			line-height: 40px;
+			border: 1px solid #000;
+			text-align: center;
+		}
+		.contentWrap li:hover {
+			background-color: coral;
+			color: white;
+		}
+		.contentWrap li.active {
+			background-color: orangered;
+			color: white;
+		}
+		.content {
+			width: 1000px;
+			margin: auto;
+			border: 1px solid #000;
+		}
+		.content div {
+			padding: 30px;
+			display: none;
+		}
+		.content div:first-child {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="contentWrap">
+		<ul class="clearfix">
+			<li class="active">menu1</li>
+			<li>menu2</li>
+			<li>menu3</li>
+			<li>menu4</li>
+			<li>menu5</li>
+		</ul>
+		<div class="content">
+			<div>1 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, asperiores neque molestias veniam sunt ad architecto sequi temporibus impedit consectetur.</div>
+			<div>2 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia libero ipsum alias incidunt aliquam dolorum similique, illum aperiam tenetur perspiciatis.</div>
+			<div>3 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita magni voluptate alias cumque non incidunt assumenda odit sit saepe odio!</div>
+			<div>4 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis nobis sit vitae, tenetur quae eius soluta explicabo distinctio. Dolore, dolorum.</div>
+			<div>5 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto in voluptatibus animi, nam cupiditate molestiae ea quo soluta fuga sit?</div>
+		</div>
+	</div>
+</body>
+</html>

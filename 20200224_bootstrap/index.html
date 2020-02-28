@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>bootstrap</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<style>
+		/*.row div{text-align: center;}*/
+		.bg-skyblue{background-color:skyblue;}
+		.h100{height: 100px;}
+	</style>
+</head>
+<body>
+	<!-- <div class="container text-center text-white">
+		<div class="row bg-primary">
+			<div class="col-sm-6 col-md-4">test4</div>
+			<div class="col-sm-6 col-md-4">test4</div>
+			<div class="d-none  d-md-block col-md-4">test4</div>
+		</div>
+		<div class="row bg-secondary">
+			<div class="col-md-3">test1</div>
+			<div class="col-md-3">test2</div>
+			<div class="col-md-3">test3</div>
+			<div class="col-md-3">test3</div>
+		</div>
+		<div class="row bg-success">
+			<div class="col-md-6">test1</div>
+			<div class="col-md-6">test2</div>
+		</div>
+	</div> -->
+
+	<div class="bg-skyblue">
+		<div class="container text-center bg-primary">
+			<div class="row">
+				<div class="col-sm-3 col-lg-6 bg-success h100">1</div>
+				<div class="col-sm-3 col-lg-6 bg-danger">2</div>
+				<div class="col-sm-3 d-lg-none bg-info">3</div>
+				<div class="col-sm-3 d-lg-none bg-warning">4</div>
+				<div class="col-12 d-sm-none bg-secondary">5</div>
+				<div class="col-12 d-sm-none bg-light">6</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="container text-center bg-primary">
+			<div class="row">
+				<div class="col bg-success h100">1</div>
+				<div class="col bg-danger">2</div>
+				<div class="col bg-info">3</div>
+				<div class="col bg-warning">4</div>
+				<div class="col bg-secondary">5</div>
+				<div class="col bg-light">6</div>
+			</div>
+		</div>
+	</div>
+	<div class="bg-skyblue">
+		<div class="container text-center bg-primary">
+			<div class="row">
+				<div class="col bg-success h100">1</div>
+				<div class="col bg-danger">2</div>
+				<div class="col bg-info">3</div>
+				<div class="col bg-warning">4</div>
+				<div class="col bg-secondary">5</div>
+				<div class="col bg-light">6</div>
+			</div>
+		</div>
+	</div>
+	<!-- p-0
+	p-1 0.25 	4px(16px)
+	p-2 0.5 	8px(16px)
+	p-3 1			16px
+	p-4 1.5 	24px
+	p-5 3 		48px -->
+
+	<div class="container mt-3">
+		<div class="row">
+			<button type="button" class="btn btn-primary">basic</button>
+			<button type="button" class="btn btn-secondary ml-2">secondary</button>
+			<button type="button" class="btn btn-outline-primary">Primary</button>
+		</div>
+	</div>
+	
+	<div class="container mt-5">
+		<div class="row">
+			<div class="btn-group ml-auto">
+				<div class="btn-group">
+					<a href="#!" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Apple</a>
+					<div class="dropdown-menu">
+						<a href="#!" class="dropdown-item">iphon11</a>
+						<a href="#!" class="dropdown-item">iphon11-Pro</a>
+						<a href="#!" class="dropdown-item">iphon11-ProMax</a>
+					</div>
+				</div>
+				<div class="btn-group">
+					<a href="#!" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Samsung</a>
+					<div class="dropdown-menu">
+						<a href="#!" class="dropdown-item">갤럭시 S20</a>
+						<a href="#!" class="dropdown-item">갤럭시 S20+</a>
+						<a href="#!" class="dropdown-item">갤럭시 S20 Ultra</a>
+					</div>
+				</div>
+				<div class="btn-group">
+					<a href="#!" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Sony</a>
+					<div class="dropdown-menu">
+						<a href="#!" class="dropdown-item">WI-1000XM2</a>
+						<a href="#!" class="dropdown-item">RX100 VII</a>
+						<a href="#!" class="dropdown-item">WF-1000XM3</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<a href="#coll" class="btn btn-primary" data-toggle="collapse">상세보기</a> <!--cllapse 무너뜨리다-->
+		<button class="btn btn-secondary" data-toggle="collapse" data-target="#coll1">상세보기</button>
+		<div id="coll" class="collapse">
+		<div class="card card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa minus officiis est iure assumenda reprehenderit, libero similique eum tempore sed, accusantium repellendus debitis suscipit laudantium quisquam dolor atque iste nulla rerum. Similique, repudiandae, pariatur! Eos nostrum, cumque beatae laborum optio quod ipsum impedit quasi repudiandae culpa tempora a praesentium nam ea aperiam rem repellat consequatur, reprehenderit dolor eius voluptatem sed minus sint adipisci quis. Dolorum voluptas unde odio, provident, perferendis soluta aliquam laboriosam voluptatem, voluptatum facilis quasi sint numquam delectus neque commodi quis cum! Dolorem consequatur odio quasi facere quas voluptas sint, deleniti provident illo voluptates nobis ipsum laudantium ipsam?</div>
+		</div>
+		<div id="coll1" class="collapse">
+		<div class="card card-body">1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa minus officiis est iure assumenda reprehenderit, libero similique eum tempore sed, accusantium repellendus debitis suscipit laudantium quisquam dolor atque iste nulla rerum. Similique, repudiandae, pariatur! Eos nostrum, cumque beatae laborum optio quod ipsum impedit quasi repudiandae culpa tempora a praesentium nam ea aperiam rem repellat consequatur, reprehenderit dolor eius voluptatem sed minus sint adipisci quis. Dolorum voluptas unde odio, provident, perferendis soluta aliquam laboriosam voluptatem, voluptatum facilis quasi sint numquam delectus neque commodi quis cum! Dolorem consequatur odio quasi facere quas voluptas sint, deleniti provident illo voluptates nobis ipsum laudantium ipsam?</div>
+		</div>
+	</div>
+	
+	<div class="bg-dark mt-3"> <!--어둡게-->
+		<div class="container">
+			<nav class="navbar navbar-expand-md navbar-dark">
+			
+				<a href="#" class="navbar-brand">LOGO</a>
+				
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu1">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<div class="collapse navbar-collapse" id="menu1">
+					<ul class="navbar-nav ml-auto">
+					
+						<li class="nav-item">
+							<a href="#!" class="nav-link text-white">menu1</a>
+						</li>
+						<li class="nav-item">
+							<a href="#!" class="nav-link text-white">menu2</a>
+						</li>
+						<li class="nav-item">
+							<a href="#!" class="nav-link text-white">menu3</a>
+						</li>
+						
+					</ul>
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+</body>
+</html>

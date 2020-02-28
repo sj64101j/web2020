@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>::TEST::</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script>
+		$(function(){
+			$(".gnb>ul>li").click(function(){
+				var liNum = $(this).index();
+				$(".gnb.ul>li").removeClass();
+				$(this).addClass("active");
+			});
+			$(".thumb").click(function(){
+				var i = $(this).index();
+				$(".image > p").hide().eq(i).show();
+			});
+			var current = 0;
+			$(".right").click(function(){
+				if(current<3){
+					current++;
+					if(current==3){current=0}
+				}
+				move();
+			});
+			$(".left").click(function(){
+				if(current>-1){
+					current--;
+					if(current==-1){current=2}
+				}
+				move();
+			});
+			function move(){
+				var num = current * 640 * -1;
+				$(".container>ul").stop().animate({left:num},800)
+			}
+		});
+	</script>
+	<style>
+		.gnb {
+			width: 1000px;
+			margin: auto;
+		}
+		.gnb ul li {
+			float: left;
+			width: 20%;
+			line-height: 40px;
+			border: 2px solid pink;
+			text-align: center;
+			cursor: pointer;
+		}
+		.gnb ul li:hover {
+			background-color: pink;
+		}
+		.gnb ul li.active {
+			background-color: pink;
+		}
+		#gallery {
+			width: 706px;
+			height: 567.5px;
+			margin: 20px auto;
+			background-color: pink;
+		}
+		.image {
+			width: 760px;
+			height: 427.5px;
+			margin: auto;
+			margin-bottom: 27.5px;
+		}
+		.image p {
+			display: none;
+			margin-left: 27.5px;
+			padding-top: 27.5px;
+		}
+		.image p img {
+			width: 650px;
+		}
+		
+		#thumbnail {
+			width: 706px;
+			height: 94px;
+		}
+		#thumbnail div {
+			float: left;
+		}
+		#thumbnail .left {
+			padding-top: 20px;
+			width: 33px;
+			cursor: pointer;
+		}
+		#thumbnail .right {
+			padding-top: 20px;
+			margin-left: 20px;
+			cursor: pointer;
+		}
+		#thumbnail .container {
+			width: 640px;
+			height: 95px;
+			position: relative;
+			overflow: hidden;
+		}
+		#thumbnail .container ul {
+			position: absolute;
+			width: 1920px;
+		}
+		#thumbnail .container ul li {
+			float: left;
+			width: 120px;
+			height: 95px;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		#thumbnail .container ul li.mr0 {
+			margin-right: 0;
+		}
+	</style>
+</head>
+<body>
+<nav class="gnb">
+	<ul class="clearfix">
+		<li class="active"><a href="#">MENU</a></li>
+		<li>MENU</li>
+		<li>MENU</li>
+		<li>MENU</li>
+		<li>MENU</li>
+	</ul>
+</nav>
+	<div id="gallery">
+		<div class="image">
+			<p style="display: block;"><img src="images/0.jpg" alt=""></p>
+			<p><img src="images/1.jpg" alt=""></p>
+			<p><img src="images/2.jpg" alt=""></p>
+			<p><img src="images/3.jpg" alt=""></p>
+			<p><img src="images/4.jpg" alt=""></p>
+			<p><img src="images/6.jpg" alt=""></p>
+			<p><img src="images/7.jpg" alt=""></p>
+			<p><img src="images/8.jpg" alt=""></p>
+			<p><img src="images/9.jpg" alt=""></p>
+			<p><img src="images/10.jpg" alt=""></p>
+			<p><img src="images/12.jpg" alt=""></p>
+			<p><img src="images/13.jpg" alt=""></p>
+			<p><img src="images/14.jpg" alt=""></p>
+			<p><img src="images/15.jpg" alt=""></p>
+			<p><img src="images/16.jpg" alt=""></p>
+		</div>
+		<div id="thumbnail" class="clearfix">
+			<div class="left"><img src="images/btn_left.gif" alt=""></div>
+			<div class="container">
+				<ul class="clearfix">
+					<li class="thumb"><img src="images/thumb0.jpg" alt="">0</li>
+					<li class="thumb"><img src="images/thumb1.jpg" alt="">1</li>
+					<li class="thumb"><img src="images/thumb2.jpg" alt="">2</li>
+					<li class="thumb"><img src="images/thumb3.jpg" alt="">3</li>
+					<li class="mr0"><img src="images/thumb4.jpg" alt="">4</li>
+					<li class="thumb"><img src="images/thumb6.jpg" alt="">6</li>
+					<li class="thumb"><img src="images/thumb7.jpg" alt="">7</li>
+					<li class="thumb"><img src="images/thumb8.jpg" alt="">8</li>
+					<li class="thumb"><img src="images/thumb9.jpg" alt="">9</li>
+					<li class="mr0"><img src="images/thumb10.jpg" alt="">10</li>
+					<li class="thumb"><img src="images/thumb12.jpg" alt="">12</li>
+					<li class="thumb"><img src="images/thumb13.jpg" alt="">13</li>
+					<li class="thumb"><img src="images/thumb14.jpg" alt="">14</li>
+					<li class="thumb"><img src="images/thumb15.jpg" alt="">15</li>
+					<li class="mr0"><img src="images/thumb16.jpg" alt="">16</li>
+				</ul>
+			</div>
+			<div class="right"><img src="images/btn_right.gif" alt=""></div>
+		</div>
+	</div>
+</body>
+</html>

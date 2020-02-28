@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scroll menu</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../js/jquery-mousewheel.min.js"></script>
+	<style>
+		body {
+			background-color: #545454;
+		}
+		.wrap {
+			width: 950px;
+			margin: 0 auto;
+			padding-bottom: 300px;
+		}
+		#top_menu {
+			width: 950px;
+			height: 115px;
+			position: fixed;
+			background-color: #545454;
+		}
+		#top_menu h1 {
+			float: left;
+			width: 125px;
+			padding-top: 40px;
+		}
+		#top_menu ul {
+			float: right;
+		}
+		#top_menu ul>li {
+			float: left;
+		}
+		#top_menu ul>li.on a{
+			color: darkred;
+			font-weight: bold;
+		}
+		#top_menu ul>li>a {
+			display: block;
+			padding: 45px 0 0 60px; /*top right bottom left*/
+			color: #fff;
+		}
+		#contents {
+			padding-top: 115px;
+		}
+		img {
+			display: block;
+		}
+	</style>
+	<script>
+		$(function(){
+			var menu = $("#top_menu>ul>li");
+			var contents = $("#contents>div");
+			var current = 0;
+			//먼저 선언을 하면
+			
+			menu.click(function(){
+				current = $(this).index(); //여기서 선언 안해도 됨
+				// index()는 선택된 인자가 몇번째인지 찾을 때
+				// → current는 menu에서 몇번째인지
+				var ct = contents.eq(current).offset().top-115;
+				//contents top → ct
+				// → ct는 contents의 current번째 높이좌표-115
+				$("html").stop().animate({scrollTop:ct});
+				//문서에서 에니메이션 사용 scrollTop을 ct만큼
+				return false;
+				// 원래 가지고 있는 기본 속성은 무시
+			});
+			
+			$(window).scroll(function(){
+				var scrollY = $(window).scrollTop();
+				// → window = 화면
+				contents.each(function(index){
+					//인자로 가져온 매개변수를 그대로 써주면 됨 (index)
+					if(scrollY == contents.eq(index).offset().top-115){
+						// scrollY가 contents의 index번째 상단 좌표-115와 같을 때
+						menu.removeClass("on").eq(index).addClass("on");
+						//menu index번째에 class"on"을 지움
+					}
+				});
+			});
+			
+			$(window).mousewheel(function(event,delta){
+				//화면에서 마우스휠 할 때 event값, delta값
+				// delta = 변동을 나타내는 지표값
+				console.log(delta);
+				if(delta<0){ //만약 delta값이 0보다 작다면
+					current++; //current = current + 1
+					if(current==3){current=2}
+					//current값이 3일 때 current = 2
+					var ct = contents.eq(current).offset().top-115;
+					// ct = contents의 current번째 상단좌표값-115
+					$("html").stop().animate({scrollTop:ct});
+					//문서에 에니메이션 사용 scrollTop을 ct만큼
+				}
+				if(delta>0){
+					current--;
+					if(current<0){current=0}
+					var ct = contents.eq(current).offset().top-115;
+					$("html").stop().animate({scrollTop:ct});
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<header id="top_menu" class="clearfix">
+			<h1>LOGO</h1>
+			<ul>
+				<li class="on"><a href="#paper">Paper</a></li>
+				<li><a href="#work">Work</a></li>
+				<li><a href="#email">E-mail</a></li>
+			</ul>
+		</header>
+		<div id="contents">
+			<div id="paper">
+				<img src="../../images/paper.jpg" alt="">
+			</div>
+			<div id="work">
+				<img src="../../images/work.jpg" alt="">
+			</div>
+			<div id="email">
+				<img src="../../images/email.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

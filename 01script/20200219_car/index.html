@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>::car::</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script>
+		$(function(){
+			var objBar = $(".bar"); //.bar의 변수값은 objBar
+			var objBar2 = $(".bar2"); //.bar의 변수값은 objBar
+			var objCar = $("#car"); //#car의 변수값은 objCar
+			var objCar2 = $("#car2"); //#car의 변수값은 objCar
+			var nStart = objBar.position().left;
+			//.bar의 왼쪽에 있을 때 시작
+			var nEnd = nStart + objBar.width() - objCar.width();
+			var nEnd = nStart + objBar2.width() - objCar2.width();
+			//시작점+.bar의 width값-#car의 width값=끝나는 지점
+			var nStep = 2; //속도 = 2
+			var nCurrent = nStart;
+			var nTimerId = 0;
+			//console.log("시작위치 : " + nStart + ", 끝위치 : " + nEnd);
+			
+			function hMove(){
+			//nCurrent = nCurrent + nStep; ↓
+				nCurrent += nStep;
+				if(nCurrent>nEnd){
+					//nCurrent가 끝나는 지점에 도달하면
+					nStep=-2; //반대방향으로 속도 = 2
+					objCar.addClass("rotate")
+					objCar2.addClass("rotate2")
+					//class에 rotate값을 넣음
+				}
+				if(nCurrent<nStart){
+					//nCurrent가 시작점보다 작다면
+					nStep=2; //2의 속도로
+					objCar.removeClass();
+					objCar2.removeClass();
+				}
+				//console.log(nCurrent);
+				objCar.css("left",nCurrent);
+				objCar2.css("right",nCurrent);
+				//nCurrent값만큼 left로 움직여라
+				//nCurrent의 초기값은 0
+			}
+			
+			//setInterval(함수이름,300);
+			//setInterval(hMove,30);
+			$(".btn_start").click(function(){
+				if(nTimerId == 0){ //중복클릭 방지
+					nTimerId = setInterval(hMove,10);
+					//nTimerId의 값이 0이기 때문에 클릭을 한번 할 수 있게 함
+					//한번 누른 후 다시 누르면 nTimerId의 값이 0이 아니기 때문에 작동하지 않음
+				}
+				console.log(nTimerId);
+			});
+			$(".btn_stop").click(function(){
+				if(nTimerId != 0){ //nTimerId의 값이 0이 아니면
+					clearInterval(nTimerId);
+					//nTimerId의 값을 없앰
+					nTimerId = 0;
+				}
+			});
+			
+		});
+	</script>
+	<style>
+		#panel {
+			width: 600px;
+			height: 300px;
+			border: 1px solid #000;
+			position: relative;
+			margin: auto;
+		}
+		.bar {
+			width: 500px;
+			height: 30px;
+			background-color: #000;
+			position: absolute;
+			left: 50px;
+			top: 190px;
+		}
+		.bar2 {
+			width: 500px;
+			height: 30px;
+			background-color: #000;
+			position: absolute;
+			left: 50px;
+			top: 240px;
+		}
+		#car {
+			position: absolute; 
+			/*구조물을 움직이려면 absolute값을 넣어야함*/
+			left: 50px;
+			top: 140px;
+		}
+		#car2 {
+			position: absolute;
+			right: 50px;
+			top: 190px;
+			transform: rotateY(180deg);
+		}
+		.rotate {
+			transform: rotateY(180deg);
+		}
+		.rotate2 {
+			transform: rotateY(0) !important;
+		}
+	</style>
+</head>
+<body>
+	<div id="panel">
+		<div class="bar"></div>
+		<div id="car"><img src="../../images/car.png" alt=""></div>
+		<div class="bar2"></div>
+		<div id="car2"><img src="../../images/car.png" alt=""></div>
+	</div>
+	<button class="btn_start">시작</button>
+	<button class="btn_stop">정지</button>	
+</body>
+</html>

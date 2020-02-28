@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>modal</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="css/colorbox.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.colorbox-min.js"></script>
+	<script>
+		$(document).ready(function(event){
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'><img src='../images/tourgallery_j1a.jpg'></div>");
+			$("a.modal").click(function(){
+				var aHref = $(this).attr("href");
+				// attr("","") → 집어넣음 / attr("") →갖고옴
+				console.log(aHref);
+				$("#glayLayer").show();
+				$("#overLayer").show().html("<img src='" + aHref + "'>");
+				return false; //기본행동 취소 (링크취소)
+				//event.preventDefault(); //return false와 같음
+			})
+			$("#glayLayer").click(function(){
+				$(this).hide();
+				$("#overLayer").hide();
+			})
+			$(".modal2").colorbox({
+				rel:"modal"
+			});
+			$(".youtube").colorbox({
+				iframe:true,
+				innerWidth:560,
+				innerHeight:315
+			});
+		})
+	</script>
+	<style>
+		.Wrap {
+			width: 470px;
+			margin: 10px auto;
+		}
+		.Wrap ul li {
+			float: left;
+			margin-right: 10px;
+			margin-bottom: 10px;
+		}
+		.Wrap ul li:nth-child(3){
+			margin-right: 0;
+		}
+		.Wrap ul li:last-child {
+			margin-right: 0;
+		}
+		.modalWrap {
+			width: 470px;
+			margin: 10px auto;
+		}
+		.modalWrap ul li {
+			float: left;
+			margin-right: 10px;
+			margin-bottom: 10px;
+		}
+		.modalWrap ul li:nth-child(3){
+			margin-right: 0;
+		}
+		.modalWrap ul li:last-child {
+			margin-right: 0;
+		}
+		#glayLayer {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background-color: #000;
+			left: 0;
+			top: 0;
+			opacity: .6;
+			display: none;
+		}
+		#overLayer {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="Wrap">
+		<ul class="clearfix">
+			<li>
+			<a href="../images/tourgallery_j1a.jpg" class="modal">
+			<img src="../images/tourgallery_j1.jpg" alt="">
+			</a>
+			</li>
+			<li>
+			<a href="../images/tourgallery_j2a.jpg" class="modal">
+			<img src="../images/tourgallery_j2.jpg" alt="">
+			</a>
+			</li>
+			<li>
+			<a href="../images/tourgallery_j3a.jpg" class="modal">
+			<img src="../images/tourgallery_j3.jpg" alt="">
+			</a>
+			</li>
+			<li>
+			<a href="../images/tourgallery_j4a.jpg" class="modal">
+			<img src="../images/tourgallery_j4.jpg" alt="">
+			</a>
+			</li>
+			<li>
+			<a href="../images/tourgallery_j5a.jpg" class="modal">
+			<img src="../images/tourgallery_j5.jpg" alt="">
+			</a>
+			</li>
+			<li>
+			<a href="../images/tourgallery_j6a.jpg" class="modal">
+			<img src="../images/tourgallery_j6.jpg" alt="">
+			</a>
+			</li>
+		</ul>
+	</div>
+	<div class="modalWrap">
+		<ul class="clearfix">
+			<li><a href="../images/tourgallery_j1a.jpg" class="modal2"><img src="../images/tourgallery_j1.jpg" alt=""></a></li>
+			<li><a href="../images/tourgallery_j2a.jpg" class="modal2"><img src="../images/tourgallery_j2.jpg" alt=""></a></li>
+			<li><a href="../images/tourgallery_j3a.jpg" class="modal2"><img src="../images/tourgallery_j3.jpg" alt=""></a></li>
+			<li><a href="../images/tourgallery_j4a.jpg" class="modal2"><img src="../images/tourgallery_j4.jpg" alt=""></a></li>
+			<li><a href="../images/tourgallery_j5a.jpg" class="modal2"><img src="../images/tourgallery_j5.jpg" alt=""></a></li>
+			<li><a href="../images/tourgallery_j6a.jpg" class="modal2"><img src="../images/tourgallery_j6.jpg" alt=""></a></li>
+		</ul>
+		<div class="youtubeWrap">
+			<a href="https://www.youtube.com/embed/cKvVgFjOmGA" class="youtube">
+				<img src="../images/tourgallery_j1a.jpg" alt="">
+			</a>
+		</div>
+	</div>
+</body>
+</html>

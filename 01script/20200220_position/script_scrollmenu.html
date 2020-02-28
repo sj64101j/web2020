@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scroll menu</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../js/jquery-mousewheel.min.js"></script>
+	<style>
+		nav.menu {
+			background-color: #ccc;
+			width: 100%;
+			transition: .3s;
+		}
+		nav.menu.fixed {
+			position: fixed;
+			top: 0;
+			background-color: #000;
+		}
+		nav.menu.fixed a {
+			color: #fff;
+		}
+		nav.menu ul>li {
+			float: left;
+			width: 20%;
+		}
+		nav.menu ul>li>a {
+			display: block;
+			text-align: center;
+			line-height: 40px;
+		}
+		.contents {
+			height: 3000px;
+		}
+	</style>
+	<script>
+		$(function(){
+			$(window).scroll(function(){
+				var winTop = $(window).scrollTop();
+				//var winTop = $(this).scrollTop(); //this = window
+				console.log(winTop);
+				if(winTop > 100){
+					$(".menu").addClass("fixed");
+				}else{
+					$(".menu").removeClass("fixed");
+				}
+			});
+			$(document).mousewheel(function(e){
+				console.log(e.delta); //delta 스크롤 값
+				$(window).scroll(function(){
+					if(winTop>100){
+						if(delta>0){ //delta 스크롤 값
+							$(".menu").addClass("fixed")
+						}else{ //마우스 스크롤 위+
+							$(".menu").removeClass("fixed")
+						}
+					}else{
+						$(".menu").removeClass("fixed")
+					}
+				})
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<nav class="menu">
+			<ul class="clearfix">
+				<li><a href="#">menu1</a></li>
+				<li><a href="#">menu2</a></li>
+				<li><a href="#">menu3</a></li>
+				<li><a href="#">menu4</a></li>
+				<li><a href="#">menu5</a></li>
+			</ul>
+		</nav>
+		<div class="contents">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et deserunt aspernatur, odio aperiam quis incidunt nemo laboriosam tempore saepe temporibus dolores quasi, rem voluptatum quisquam. Fugiat harum maiores, vitae cum facere placeat velit autem. Amet adipisci at neque quas officia qui explicabo maiores provident saepe, atque libero vero doloremque fuga voluptates inventore assumenda fugit quasi dolores nihil placeat aperiam eum cupiditate quidem magnam nisi. Neque earum, veniam voluptates aperiam! Rem, nulla obcaecati! Sapiente exercitationem cumque, eveniet, vel repellat voluptatem earum quibusdam tenetur molestiae ducimus explicabo illum, recusandae voluptate esse consectetur cupiditate iusto, incidunt. Aliquid dolores sunt eius ad dolore ullam?
+		</div>
+	</div>
+</body>
+</html>
