@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<style>
+		body {background-color: #333;}
+		.run {
+			animation: run 4s linear infinite forwards; z-index: 1; position: absolute;
+		}
+		@keyframes run {
+			0% {left: 200px;}
+			50% {left: 2200px;}
+			100% {left: 200px; transform: rotateY(180deg);}
+		}
+		.woman {
+			width: 114px; height: 240px;
+			position: relative; left: 200px;
+			animation: bounce .5s linear infinite alternate; z-index: 2;
+		}
+		@keyframes bounce {
+			50% {transform: translateX(10px) translateY(10px);}
+		}
+		.woman>div {position: absolute;}
+		.woman>.body {z-index: 1;}
+		.woman>.arm1 {top: 100px; left: -20px;
+		animation:aRight 0.5s linear infinite alternate;
+		transform-origin: 80px 20px; z-index: 2;}
+		@keyframes aRight {
+			0% {transform: rotate(20deg)}
+			100% {transform: rotate(-60deg)}
+		}
+		.woman>.arm2 {top: 100px; left: -20px;
+		animation:aLeft 0.5s linear infinite alternate;
+		transform-origin: 80px 20px}
+		@keyframes aLeft {
+			0% {transform: rotate(-60deg)}
+			100% {transform: rotate(20deg)}
+		}
+		.woman>.foot1 {top: 200px;
+		animation: fRight 0.5s linear infinite alternate;
+		transform-origin: 46px 40px;}
+		@keyframes fRight {
+			0% {transform: rotate(-20deg)}
+			100% {transform: rotate(60deg)}
+		}
+		.woman>.foot2 {top: 200px;
+		animation: fLeft 0.5s linear infinite alternate;
+		transform-origin: 46px 40px;}
+		@keyframes fLeft {
+			0% {transform: rotate(60deg)}
+			100% {transform: rotate(-20deg)}
+		}
+		.road {
+			width: 100%; height: 100px;
+			background-color: darkred; position: absolute; top: 500px;
+			border-top: 3px solid #fff;
+			border-bottom: 3px solid #fff;
+		}
+		
+		
+		.run2 {
+			animation: run2 5s linear infinite forwards; z-index: 1; position: absolute;
+		}
+		@keyframes run2 {
+			0% {left: 200px;}
+			50% {left: 2200px;}
+			100% {left: 200px; transform: rotateY(180deg);}
+		}
+		.woman2 {
+			width: 114px; height: 240px;
+			position: relative; left: 200px;
+			animation: bounce2 .5s linear infinite alternate; z-index: 2;
+		}
+		@keyframes bounce2 {
+			50% {transform: translateX(10px) translateY(10px);}
+		}
+		.woman2>div {position: absolute;}
+		.woman2>.body2 {z-index: 1; top: 150px;}
+		.woman2>.arm1_2 {top: 250px; left: -20px;
+		animation:aRight2 0.5s linear infinite alternate;
+		transform-origin: 80px 20px; z-index: 2;}
+		@keyframes aRight2 {
+			0% {transform: rotate(20deg)}
+			100% {transform: rotate(-60deg)}
+		}
+		.woman2>.arm2_2 {top: 250px; left: -20px;
+		animation:aLeft2 0.5s linear infinite alternate;
+		transform-origin: 80px 20px}
+		@keyframes aLeft2 {
+			0% {transform: rotate(-60deg)}
+			100% {transform: rotate(20deg)}
+		}
+		.woman2>.foot1_2 {top: 350px;
+		animation: fRight2 0.5s linear infinite alternate;
+		transform-origin: 46px 40px;}
+		@keyframes fRight2 {
+			0% {transform: rotate(-20deg)}
+			100% {transform: rotate(60deg)}
+		}
+		.woman2>.foot2_2 {top: 350px;
+		animation: fLeft2 0.5s linear infinite alternate;
+		transform-origin: 46px 40px;}
+		@keyframes fLeft2 {
+			0% {transform: rotate(60deg)}
+			100% {transform: rotate(-20deg)}
+		}
+		.road2 {
+			width: 100%; height: 100px;
+			background-color: darkred; position: absolute; top: 650px;
+			border-top: 3px solid #fff;
+			border-bottom: 3px solid #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="run">
+		<div class="woman">
+			<div class="body"><img src="../images/body01.png" alt=""></div>
+			<div class="arm1"><img src="../images/arm01.png" alt=""></div>
+			<div class="arm2"><img src="../images/arm01.png" alt=""></div>
+			<div class="foot1"><img src="../images/foot01.png" alt=""></div>
+			<div class="foot2"><img src="../images/foot02.png" alt=""></div>
+		</div>
+	</div>
+		<div class="road"></div>
+		<div class="run2">
+		<div class="woman2">
+			<div class="body2"><img src="../images/body01.png" alt=""></div>
+			<div class="arm1_2"><img src="../images/arm01.png" alt=""></div>
+			<div class="arm2_2"><img src="../images/arm01.png" alt=""></div>
+			<div class="foot1_2"><img src="../images/foot01.png" alt=""></div>
+			<div class="foot2_2"><img src="../images/foot02.png" alt=""></div>
+		</div>
+	</div>
+		<div class="road2"></div>
+</body>
+</html>
