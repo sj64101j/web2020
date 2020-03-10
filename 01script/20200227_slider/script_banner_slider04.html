@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>slider</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../js/jquery-mousewheel.min.js"></script>
+	<style>
+		#wrapper {width: 500px; height: 258.33px;
+			margin: 20px auto; overflow: hidden;
+			background-color: deepskyblue;}
+			/*overflow: hidden 단축키 : oh*/
+		#wrapper ul.slider {width: 500px; height: 208.33px;
+			position: relative;}
+		/*ul값에 크기값을 줘야 작동 됨
+		position을 주면 크기값이 사라짐*/
+		#wrapper ul.slider li {position: absolute; left: 100%;}
+		#wrapper ul.slider li:nth-child(1) {left: 0;}
+		#wrapper ul.slider li img {width: 500px; display: block;}
+	/*img가 db가 아닐 때 이미지끼리 서로 떨어져있음*/
+		#wrapper .pager span {display: inline-block; 
+			width: 20px; height: 20px; background-color: #fff;
+		border-radius: 10px; text-indent: -9999px;
+		cursor:pointer;}
+		#wrapper .pager span.active {background-color: #f00;}
+	</style>
+	<script>
+		$(function(){
+			var current = 0;
+			var banner = $("ul.slider li");
+			var bCount = banner.length;
+			var i;
+			var overBtn = false; //중복실행
+			var pager = $(".pager span");
+			
+			//다음 실행 ↓
+			$(".bt_next").click(function(){
+				if(overBtn==false){ //버튼 연속 클릭 방지
+				 		overBtn=true;
+						i = current + 1;
+						if(i==bCount){
+							i=0;
+							current=bCount-1;
+						}
+					slideView("next");
+				}
+			});
+			//이전 실행 ↓
+			$(".bt_prev").click(function(){
+				if(overBtn==false){
+					overBtn=true;
+					i = current - 1;
+					if(i==-1){
+						i=bCount-1;
+						current=0;
+					}
+					slideView("prev");
+				}
+			});
+
+
+			function slideView(view){ //view는 인자
+
+				var currentEl = banner.eq(current);
+				var nextEl = banner.eq(i);
+				
+				pager.removeClass("active").eq(i).addClass("active");
+				//pager = $(".pager span");
+
+				if(view=="next"){ //"" 문자
+					currentEl.css({left:0}).stop().animate({left:"-100%"},1000);
+					nextEl.css({left:"100%"}).stop().animate({left:0},{duration:1000,complete:function(){overBtn=false;}});
+				}else{
+					currentEl.css({left:0}).stop().animate({left:"100%"},1000);
+					nextEl.css({left:"-100%"}).stop().animate({left:0},{duration:1000,complete:function(){overBtn=false;}});
+				}
+				current = i;
+			}
+			//자동실행 ↓
+			function trigger(){
+				$(".bt_next").trigger("click");
+			}
+			//setInterval(trigger,5000); //자동재생
+			
+			//pager ↓
+			pager.click(function(){
+				i = $(this).index(); //자기 자신의 번호를 가져와서 i 값에 넣는다
+				slideView("next");
+			});
+			
+			// 마우스 스크롤 ↓
+			$(window).mousewheel(function(event,delta){
+				//delta = 스크롤 값
+				if(delta<0){ //delta값이 0보다 작으면
+					$(".bt_next").trigger("click");
+				}
+				if(delta>0){
+					$(".bt_prev").trigger("click");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<ul class="slider">
+			<li><img src="../../images/pc01.jpg" alt=""></li>
+			<li><img src="../../images/pc02.jpg" alt=""></li>
+			<li><img src="../../images/pc03.jpg" alt=""></li>
+		</ul>
+		<div class="pager">
+			<span class="active">1</span>
+			<span>2</span>
+			<span>3</span>
+		</div>
+		<div class="btn">
+			<span class="bt_prev">이전</span>
+			<span class="bt_next">다음</span>
+		</div>
+	</div>
+</body>
+</html>
