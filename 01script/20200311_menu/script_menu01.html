@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>menu</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<style>
+		#menu {width: 1000px; margin: 0 auto;}
+		#menu>ul {width: 100%;}
+		#menu>ul>li {float: left;width: 20%;line-height: 40px;
+		border-right: 1px solid #000; position: relative;}
+		#menu>ul>li:first-child {border-left: 1px solid #000;}
+		#menu>ul>li:hover {background-color: #eee;}
+		#menu>ul>li>a {display: block;text-align: center;}
+		/*#menu>ul>li>ul.sub {display: none;}*/
+		#menu ul.sub {position: absolute;width: 100%;
+		background-color: pink;}
+		#menu ul.sub>li {width: 100%;}
+		#menu ul.sub>li>a {display: block;text-align: center;}
+	</style>
+	<script>
+		$(function(){
+			// css ↓
+			/*$("ul.sub").css("display","none");
+			$("#menu>ul>li").mouseover(function(){
+			//"#menu>ul>li"에 마우스가 올라갔을 때
+				var i = $(this).index();
+				//i = "#menu>ul>li"의 ..번째
+				$("#menu>ul>li:eq("+i+")").find("ul.sub").css("display","block");
+				//문장 안에 넣을 땐 + 사용
+				//#menu>ul>li의 i번째에서 "ul.sub"를 찾아서 db해준다
+			}).mouseout(function(){ //마우스가 나갔을 때
+				$("ul.sub").css("display","none"); //"ul.sub" dn해줌
+			});*/
+			
+			//hide()/show() ↓
+			/*$("ul.sub").hide(); //"ul.sub"를 가린다
+			$("#menu>ul>li").mouseenter(function(){ 
+			//"#menu>ul>li"에 마우스가 들어가면
+				var i = $(this).index();
+				//i = "#menu>ul>li"의 ..번째
+				$("#menu>ul>li").find("ul.sub").stop().slideDown();
+				//"#menu>ul>li"에서 "ul.sub"를 찾아서 slideDown 해준다
+				//slideDown은 애니메이션이기 때문에 반드시 앞에 stop()을 붙혀줌
+			}).mouseleave(function(){ //마우스가 나갔을 때
+				$("ul.sub").stop().slideUp(); //"ul.sub"을 slideUp 해준다
+				//slideUp도 애니메이션
+			});*/
+			
+			
+			//hover();
+			//$(선택자).hover(function(){},function(){}); ↓
+			$("ul.sub").hide();
+			$("#menu>ul>li").hover(function(){
+				var i = $(this).index();
+				$("#menu>ul>li").eq(i).find("ul.sub").stop().slideDown();
+			},function(){
+				$("ul.sub").hide();
+			});
+		});
+	</script>
+</head>
+<body>
+	<!--nav#menu>ul>li*5>a[#]>{menu$}^ul.sub>li*5>a[#]>{smenu$}-->
+	<nav id="menu">
+		<ul class="clearfix">
+			<li>
+				<a href="#">menu1</a>
+				<ul class="sub">
+					<li><a href="#">smenu1</a></li>
+					<li><a href="#">smenu2</a></li>
+					<li><a href="#">smenu3</a></li>
+					<li><a href="#">smenu4</a></li>
+					<li><a href="#">smenu5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu2</a>
+				<ul class="sub">
+					<li><a href="#">smenu1</a></li>
+					<li><a href="#">smenu2</a></li>
+					<li><a href="#">smenu3</a></li>
+					<li><a href="#">smenu4</a></li>
+					<li><a href="#">smenu5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu3</a>
+				<ul class="sub">
+					<li><a href="#">smenu1</a></li>
+					<li><a href="#">smenu2</a></li>
+					<li><a href="#">smenu3</a></li>
+					<li><a href="#">smenu4</a></li>
+					<li><a href="#">smenu5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu4</a>
+				<ul class="sub">
+					<li><a href="#">smenu1</a></li>
+					<li><a href="#">smenu2</a></li>
+					<li><a href="#">smenu3</a></li>
+					<li><a href="#">smenu4</a></li>
+					<li><a href="#">smenu5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu5</a>
+				<ul class="sub">
+					<li><a href="#">smenu1</a></li>
+					<li><a href="#">smenu2</a></li>
+					<li><a href="#">smenu3</a></li>
+					<li><a href="#">smenu4</a></li>
+					<li><a href="#">smenu5</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>

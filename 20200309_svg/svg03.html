@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>svg</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<style>
+		body {background-color: salmon;}
+		.st0{
+			fill:none; stroke:#000; stroke-miterlimit:10;
+			stroke-dasharray:688; stroke-dashoffset:688;
+		}
+		@keyframes lineAni {
+			to {stroke-dashoffset:0;}
+		}
+		.svgWrapper.animate .st0 {
+			animation: lineAni 1s forwards linear;
+		}
+	</style>
+	<script>
+		$(function(){
+			$(window).scroll(function(){
+				var sTop = $(this).scrollTop();
+				if(sTop>500){
+					$(".svgWrapper").addClass("animate");
+				}else {
+					$(".svgWrapper").removeClass("animate");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="scroll" style="height: 1000px;"></div>
+	<div class="svgWrapper">
+		<svg id="Layer_1" x="0px" y="0px"
+		 width="500px" height="500px" viewBox="0 0 500 500">
+		
+		<path class="st0" d="M67.146,9.859c0,0,0.671,142.841,171.542,206.92c170.872,64.078,52.726,130.825,68.75,193.568
+		c16.022,62.743,126.151,42.046,125.484,74.087"/>
+		</svg>
+	</div>
+</body>
+</html>
+
+
+<!--getTotalLength() = 길이 구하기-->

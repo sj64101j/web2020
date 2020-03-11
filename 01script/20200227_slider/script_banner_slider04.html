@@ -30,73 +30,77 @@
 			var current = 0;
 			var banner = $("ul.slider li");
 			var bCount = banner.length;
-			var i;
+			var i; //현재 위치와 다음 위치 구할 때
 			var overBtn = false; //중복실행
 			var pager = $(".pager span");
 			
 			//다음 실행 ↓
 			$(".bt_next").click(function(){
-				if(overBtn==false){ //버튼 연속 클릭 방지
-				 		overBtn=true;
-						i = current + 1;
+				if(overBtn==false){ //버튼 연속 클릭 방지 (overBtn = false => false==false 성립)
+				 		overBtn=true; //overBtn==false 같다면 overBtn이 true값이 됨
+						i = current + 1; //증가
 						if(i==bCount){
 							i=0;
 							current=bCount-1;
-						}
-					slideView("next");
+						} //갯수만큼 진행되었을 때 원값으로 돌아감
+					slideView("next"); //".bt_next"를 클릭했을 때 실행되는 함수의 인자""
+					//next는 오른쪽에서 왼쪽으로 감
 				}
 			});
 			//이전 실행 ↓
 			$(".bt_prev").click(function(){
 				if(overBtn==false){
 					overBtn=true;
-					i = current - 1;
+					i = current - 1; //감소
 					if(i==-1){
 						i=bCount-1;
 						current=0;
 					}
-					slideView("prev");
+					slideView("prev"); //prev는 왼쪽에서 오른쪽으로 감
 				}
 			});
 
 
-			function slideView(view){ //view는 인자
+			function slideView(view){ //view는 매개체 "next"라는 값을 view라는 값에 넣어줌
 
-				var currentEl = banner.eq(current);
+				var currentEl = banner.eq(current); //current는 0부터 시작
 				var nextEl = banner.eq(i);
 				
 				pager.removeClass("active").eq(i).addClass("active");
 				//pager = $(".pager span");
 
 				if(view=="next"){ //"" 문자
-					currentEl.css({left:0}).stop().animate({left:"-100%"},1000);
+					currentEl.css({left:0}).stop().animate({left:"-100%"},1000); //현재 이미지
 					nextEl.css({left:"100%"}).stop().animate({left:0},{duration:1000,complete:function(){overBtn=false;}});
-				}else{
+					//complete 실행이 되면 overBtn=false로 바뀜 => 다시 클릭할 수 있게 만들어줌
+				}else{ //view가 "next"와 같지 않다면 (prev라면)
 					currentEl.css({left:0}).stop().animate({left:"100%"},1000);
 					nextEl.css({left:"-100%"}).stop().animate({left:0},{duration:1000,complete:function(){overBtn=false;}});
 				}
-				current = i;
+				current = i; //*중요*
 			}
 			//자동실행 ↓
-			function trigger(){
-				$(".bt_next").trigger("click");
+			function trigger(){ //trigger는 강제 실행
+				$(".bt_next").trigger("click"); //trigger는 메소드 , "click"함수를 강제 실행
 			}
-			//setInterval(trigger,5000); //자동재생
+			//setInterval(trigger,5000); //자동재생 //자동으로 버튼을 눌러줌
 			
 			//pager ↓
 			pager.click(function(){
 				i = $(this).index(); //자기 자신의 번호를 가져와서 i 값에 넣는다
-				slideView("next");
+				//pager의 i번째를 클릭한다면
+				slideView("next"); //함수 실행
 			});
 			
 			// 마우스 스크롤 ↓
-			$(window).mousewheel(function(event,delta){
-				//delta = 스크롤 값
+			$(window).mousewheel(function(event,delta){ //event는 e로 사용해도 됨
+				//mouse관련은 event를 사용해야 함
+				//delta = 스크롤 값 / 올리면 +값 내리면 -값
 				if(delta<0){ //delta값이 0보다 작으면
 					$(".bt_next").trigger("click");
 				}
-				if(delta>0){
-					$(".bt_prev").trigger("click");
+				if(delta>0){ //위로 올리게 된다면
+					$(".bt_prev").trigger("click"); //".bt_prev"를 억지로 실행시킴
 				}
 			});
 		});
