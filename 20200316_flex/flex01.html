@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		html,body{height: 100%;}
+		.wrap{
+			background-color: pink;
+			/*width: 500px;height: 500px;*/
+			width: 100vw; /*v=화면상에서 w=width값*/
+			height: 100vw; /*v=화면상에서 h=height값*/
+			font-size: 10vw;
+			display: flex;
+			/*justify-content: space-around;*/
+			/*align-items: center;*/
+		}
+		.wrap div {background-color: orange;}
+		.txt {
+			/*margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			margin-bottom: auto;*/
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="txt">sejin</div>
+		<div class="txt">sejin</div>
+	</div>
+</body>
+</html>
