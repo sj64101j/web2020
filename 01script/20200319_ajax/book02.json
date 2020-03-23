@@ -1,0 +1,32 @@
+{
+	"book":[
+		{
+			"name":"잉꼬",
+			"bookimg":"img1.jpg"
+		},
+		{
+			"name":"장미",
+			"bookimg":"img2.jpg"
+		},
+		{
+			"name":"거위",
+			"bookimg":"img3.jpg"
+		},
+		{
+			"name":"바이킹",
+			"bookimg":"img4.jpg"
+		},
+		{
+			"name":"놀이동산",
+			"bookimg":"img5.jpg"
+		},
+		{
+			"name":"양",
+			"bookimg":"img6.jpg"
+		},
+		{
+			"name":"잉꼬2",
+			"bookimg":"img7.jpg"
+		}
+	]
+}

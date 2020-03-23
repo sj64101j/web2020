@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>::ajax::</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$.ajax({
+				url:"book.xml",
+				dataType:"xml",
+				success:function(data){
+					$(data).find("book").each(function(){
+						/*each = 계속 돌림*/
+						var title = $("title",this).text();
+						var author = $("author",this).text();
+						var price = $("price",this).text();
+						var img = $("bookimg",this).text();
+						/*text자료를 title에 넣는다*/
+						var txt = "<li>"+title+","+author+","+price+","+"<img src='../images/"+img+">"+"</li>";
+						/*title, author, price 는 변수*/
+						$(".han").append(txt)
+					});
+				} //success end
+			}); //ajax end
+		}); //$ end
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="han"></ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<name>잉꼬</name>
+		<bookimg>img1.jpg</bookimg>
+	</book>
+	<book>
+		<name>장</name>
+		<bookimg>img2.jpg</bookimg>
+	</book>
+	<book>
+		<name>거위</name>
+		<bookimg>img3.jpg</bookimg>
+	</book>
+	<book>
+		<name>바이킹</name>
+		<bookimg>img4.jpg</bookimg>
+	</book>
+	<book>
+		<name>놀이동산</name>
+		<bookimg>img5.jpg</bookimg>
+	</book>
+	<book>
+		<name>양</name>
+		<bookimg>img6.jpg</bookimg>
+	</book>
+	<book>
+		<name>잉꼬2</name>
+		<bookimg>img7.jpg</bookimg>
+	</book>
+</books>
